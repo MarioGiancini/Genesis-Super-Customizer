@@ -1,0 +1,158 @@
+<?php
+
+/**
+* Register sidebars customizer settings
+*
+* @link       http://genesissupercustomizer.com
+* @since      1.0.0
+*
+* @package    Genesis_Super_Customizer
+* @subpackage Genesis_Super_Customizer/includes
+*/
+
+class GSC_Sidebars extends GSC_Base {
+
+  protected $new_section = true;
+
+  protected $mod_section = 'sidebars';
+
+  protected $section_title = 'Sidebars';
+
+  protected $section_desc = 'Adjust styles for the primary sidebar (and secondary if your theme has enabled them). By default sidebars will adopt theme colors. You can override them here.';
+
+  protected $section_priority = 100;
+
+  //* Setup mods here to get for output
+  protected function get_mods() {
+
+    $this->mod_settings = array(
+      'sidebar_primary_background' => array(
+        'css'         => array( '.sidebar-primary', 'background-color', '', '', true, array( 'rgba' => 'sidebar_primary_alpha' ) ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'label'       => 'Primary Sidebar Background',
+        'description' => 'Default color is transparent.',
+        'option'      => true,
+      ),
+      'sidebar_primary_alpha' => array(
+        'css'         => array(),
+        'priority'    => 10,
+        'type'        => 'range',
+        'default'     => 100,
+        'label'       => 'Primary Sidebar BG Alpha',
+        'input_attrs' => array(
+          'min'   => 0,
+          'max'   => 100,
+          'step'  => 5,
+        ),
+        'decimal'     => true,
+        'option'      => true,
+      ),
+      'sidebar_secondary_background' => array(
+        'css'         => array( '.sidebar-secondary', 'background-color', '', '', true, array( 'rgba' => 'sidebar_secondary_alpha' ) ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'label'       => 'Secondary Sidebar Background',
+        'description' => 'Default color is transparent.',
+        'option'      => true,
+      ),
+      'sidebar_secondary_alpha' => array(
+        'css'         => array(),
+        'priority'    => 10,
+        'type'        => 'range',
+        'default'     => 100,
+        'label'       => 'Secondary Sidebar BG Alpha',
+        'input_attrs' => array(
+          'min'   => 0,
+          'max'   => 100,
+          'step'  => 5,
+        ),
+        'decimal'     => true,
+        'option'      => true,
+      ),
+      'sidebar_title_color' => array(
+        'css'         => array( '.sidebar .widget-title', 'color' ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'description' => 'Will override default widget title options in Widget Styles section.',
+        'option'      => true,
+      ),
+      'sidebar_title_alignment' => array(
+        'css'         => array( '.sidebar .widget-title', 'text-align' ),
+        'priority'    => 10,
+        'type'        => 'select',
+        'default'     => '',
+        'choices'     => $this->alignments,
+        'description' => 'Will override default widget title options in Widget Styles section.',
+        'option'      => true,
+      ),
+      'sidebar_list_item_border_color' => array(
+        'css'         => array( '.sidebar li', 'border-color', '', '', true, array( 'rgba' => 'sidebar_list_item_border_alpha' ) ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'option'      => true,
+      ),
+      'sidebar_list_item_border_alpha' => array(
+        'css'         => array(),
+        'priority'    => 10,
+        'type'        => 'range',
+        'default'     => 100,
+        'input_attrs' => array(
+          'min'   => 0,
+          'max'   => 100,
+          'step'  => 5,
+        ),
+        'decimal'     => true,
+        'option'      => true,
+      ),
+      'sidebar_list_item_border_style' => array(
+        'css'         => array( '.sidebar li', 'border-bottom-style' ),
+        'priority'    => 10,
+        'type'        => 'select',
+        'default'     => 'dotted',
+        'choices'     => $this->border_styles,
+        'option'      => true,
+      ),
+      'sidebar_list_item_border_width' => array(
+        'css'         => array( '.sidebar li', 'border-bottom-width', '', 'px' ),
+        'priority'    => 10,
+        'type'        => 'range',
+        'default'     => 1,
+        'input_attrs' => array(
+          'min'   => 0,
+          'max'   => 15,
+        ),
+        'option'      => true,
+      ),
+      'sidebar_text_color' => array(
+        'css'         => array( '.sidebar', 'color' ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'option'      => true,
+      ),
+      'sidebar_link_color' => array(
+        'css'         => array( '.sidebar a', 'color' ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'option'      => true,
+      ),
+      'sidebar_link_hover_color' => array(
+        'css'         => array( '.sidebar a:hover', 'color' ),
+        'priority'    => 10,
+        'type'        => 'color',
+        'default'     => '',
+        'option'      => true,
+      )
+    );
+
+  }
+
+} // end class
+
+new GSC_Sidebars;
