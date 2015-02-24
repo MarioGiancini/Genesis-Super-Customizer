@@ -33,7 +33,7 @@ class GSC_Header_Image extends GSC_Base {
         'css'         => array( '.title-area', 'width', '', 'px', true, array( 'media_query' => 'min-width: ' . $this->desktop_min_size . 'px' ) ),
         'priority'    => 10,
         'type'        => 'range',
-        'default'     => 260,
+        'default'     => 360,
         'input_attrs' => array(
           'min'   => 100,
           'max'   => $this->logo_width_max,
@@ -43,10 +43,10 @@ class GSC_Header_Image extends GSC_Base {
         'option'      => true,
       ),
       'logo_height' => array(
-        'css'         => array( '.title-area', 'max-height', '', 'px', true, array(
+        'css'         => array( '.title-area', 'height', '', 'px', true, array(
           // 'media_query'   => 'min-width: ' . $this->desktop_min_size . 'px',
-          'affects'       => array( '.site-header .genesis-nav-menu > li > a'  ),
-          'affects_values'=> array( '.site-header .genesis-nav-menu > li > a' => 'line-height: ' .  $this->get_field_value( 'logo_height' ) . 'px; padding-top: 0px; padding-bottom: 0px;' )
+          'affects'       => array( '.site-header .genesis-nav-menu > li > a', '.header-image .title-area', '.header-image .site-title > a'  ),
+          'affects_values'=> array( '.site-header .genesis-nav-menu > li > a' => 'line-height: ' .  $this->get_field_value( 'logo_height' ) . 'px; padding-top: 0px; padding-bottom: 0px;', '.header-image .title-area' => 'padding: 0;', '.header-image .site-title > a' => 'min-height: initial; height: ' .  $this->get_field_value( 'logo_height' ) . 'px;' )
         ) ),
         'priority'    => 10,
         'type'        => 'range',
@@ -60,7 +60,7 @@ class GSC_Header_Image extends GSC_Base {
         'option'      => true,
       ),
       'flex_crop' => array(
-        'css'         => array(), // modified by header image upload options
+        'css'         => array(),
         'priority'    => 10,
         'type'        => 'checkbox',
         'default'     => 0,
@@ -68,7 +68,7 @@ class GSC_Header_Image extends GSC_Base {
         'option'      => true,
       ),
       'header_hover_opacity' => array(
-        'css'         => array('.custom-header .site-title a:hover', 'opacity' ),
+        'css'         => array( '.custom-header .site-title a:hover', 'opacity' ),
         'priority'    => 10,
         'type'        => 'range',
         'default'     => 100,
@@ -80,6 +80,28 @@ class GSC_Header_Image extends GSC_Base {
           'step'  => 5,
         ),
         'decimal'     => true,
+        'option'      => true,
+      ),
+      'fullwidth_image' => array(
+        'css'         => array( '.title-area', 'width', '', '% !important', true, array(
+          'checkbox'        => true,
+          'value'           => '100',
+        ) ),
+        'priority'    => 10,
+        'type'        => 'checkbox',
+        'default'     => 0,
+        'label'       => 'Make Header Image Full Width',
+        'option'      => true,
+      ),
+      'center_image' => array(
+        'css'         => array( '.header-image .site-title > a', 'background-position', '', '% !important', true, array(
+          'checkbox'        => true,
+          'value'           => '50',
+        ) ),
+        'priority'    => 10,
+        'type'        => 'checkbox',
+        'default'     => 0,
+        'label'       => 'Center The Header Image',
         'option'      => true,
       )
     );

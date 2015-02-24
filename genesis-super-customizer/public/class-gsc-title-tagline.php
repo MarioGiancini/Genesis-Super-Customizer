@@ -149,6 +149,18 @@ class GSC_Title_Tagline extends GSC_Base {
         'type'        => 'checkbox',
         'default'     => 0,
         'option'      => true,
+      ),
+      'center_title_text' => array(
+        'css'         => array( '.title-area', 'text-align', '', '', true, array(
+          'checkbox'        => true,
+          'value'           => 'center',
+        ) ),
+        'priority'    => 10,
+        'type'        => 'checkbox',
+        'default'     => 0,
+        'label'       => 'Center The Title Text',
+        'description' => 'Also senters the description text.',
+        'option'      => true,
       )
     );
 
