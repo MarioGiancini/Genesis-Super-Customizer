@@ -1,6 +1,6 @@
 === Genesis Super Customizer ===
 Contributors: Mario Giancini
-Donate link: http://supercustomizer.com/
+Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
 Tested up to: 4.1
