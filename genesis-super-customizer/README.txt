@@ -1,10 +1,22 @@
-Thank you for being apart of the Genesis Super Customizer community!
+=== Genesis Super Customizer ===
+Contributors: mariogiancini
+Donate link: http://supercustomizer.com/
+Tags: customizer, genesis, options, supercustomizer, design
+Requires at least: 3.8
+Tested up to: 4.1
+Stable tag: 4.1.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin adds options to customize colors, create a fixed header that shrinks on scroll,
-upload logos, and much more, all through the native Wordpress customizer.
+Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, and much more, all through the native Wordpress Customizer interface.
 It's the easiest way to customize the design of your Genesis Theme.
 
-More information can be found at http://supercustomizer.com
+== Description ==
+
+Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, and much more, all through the native Wordpress Customizer interface.
+It's the easiest way to customize the design of your Genesis Theme. Please note this plugin requires the Genesis theme to be activated.
+
+More information can be found at [http://supercustomizer.com](http://supercustomizer.com "Genesis Super Customizer").
 
 
 == INSTALLATION ==
@@ -24,7 +36,7 @@ a success notification on the top.
 
 = How do I reset the genesis super customizer options? =
 
-In this version, you need to upload the default settings .json file that came with the plugin.
+In this version, you need to upload the default settings .json file. You can find that template at
 Import the same as you would any other template (instructions above).
 
 = Will Add More Here As They Appear =
@@ -32,25 +44,11 @@ Import the same as you would any other template (instructions above).
 Rhyming unintentional.
 
 
-== LICENSING ==
-
-This plugin, including the PHP code and integrated HTML, CSS, and JavaScript
-are licensed under the General Public License (GPL).
-
-You may use this version of Genesis Super Customizer on any number of websites (without warrenty).
-
-Find out more about licensing here: http://supercustomizer.com
-
-
-== BUGS ==
-
-If you find an issue, please tweet it to us @SuperCustomizer.
-
-
 == SUPPORT ==
 
-Please follow us on Twitter ( http:/twitter.com/SuperCustomizer ) for the latest updates.
-Support is currently in beta, but forums and detailed documentation is coming soon.
+Please follow on Twitter [@SuperCustomizer]( http:/twitter.com/SuperCustomizer ) for the latest updates.
+
+Detailed documentation is coming soon.
 
 
 == CHANGELOG ==
