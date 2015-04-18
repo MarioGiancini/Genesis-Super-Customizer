@@ -31,7 +31,7 @@ class GSC_Buttons extends GSC_Base {
         'priority'    => 10,
         'type'        => 'checkbox',
         'default'     => 0,
-        'label'       => 'Override Theme Buttone Colors',
+        'label'       => 'Override Theme Button Colors',
         'description' => 'By default your buttons adopt the theme colors. Check to override them and options will appear below.',
         'option'      => true,
       ),

@@ -8,7 +8,7 @@ Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The easiest way to customize the design of your Genesis theme.
+The easiest way to customize the design of your Genesis theme, right from the WordPress Customizer.
 
 
 == Description ==
