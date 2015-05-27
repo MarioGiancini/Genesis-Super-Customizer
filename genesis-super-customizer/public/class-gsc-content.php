@@ -43,7 +43,7 @@ class GSC_Content extends GSC_Base {
             '.sidebar-primary' => array( 'width' => 0.3 ),
             '.sidebar-secondary' => array( 'width' => 0.15 ),
             '.content-sidebar-sidebar .content-sidebar-wrap, .sidebar-content-sidebar .content-sidebar-wrap, .sidebar-sidebar-content .content-sidebar-wrap' => array( 'width' => 0.82 ),
-            '.footer-widgets-1, .footer-widgets-2, .footer-widgets-3' => array( 'width' => 0.28 ),
+            '.footer-widgets-1, .footer-widgets-2, .footer-widgets-3' => array( 'width' => 0.3 ),
             '.footer-widgets-1' => array( 'margin-right' => 0.05 )
             )
         ) ),

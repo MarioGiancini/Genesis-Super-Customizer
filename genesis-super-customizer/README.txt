@@ -3,8 +3,8 @@ Contributors: Mario Giancini
 Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 4.1.1
+Tested up to: 4.2.2
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ The easiest way to customize the design of your Genesis theme, right from the Wo
 == Description ==
 
 Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, and much more, all through the native Wordpress Customizer interface.
-It's the easiest way to customize the design of your Genesis Theme. Please note this plugin requires the Genesis theme to be activated.
+It's the easiest way to customize the design of the Genesis theme or your custom child theme. Please note this plugin requires the Genesis theme to be activated.
 
 More information can be found at [http://supercustomizer.com](http://supercustomizer.com "Genesis Super Customizer").
 
@@ -36,13 +36,13 @@ a success notification on the top.
 
 = How do I reset the genesis super customizer options? =
 
-In the current version, you need to upload the default settings .json file. You can find that template at
-Import the same as you would any other template (instructions above). There a future plans for a simple reset button.
+In the current version, you need to upload the default settings .json file. You can find that template at [http://supercustomizer.com/downloads/genesis-default-settings/](http://supercustomizer.com/downloads/genesis-default-settings/ "Genesis Super Customizer Default Settings").
+Import the same as you would any other template (instructions above). There are future plans for a simple reset button.
 
 = Does it work with premium Genesis child themes? =
 
-At the moment Genesis Super Customizer isn't tested with premium child themes.
-It should work fine with your custom child theme, but not all options on premium themes work.
+At the moment Genesis Super Customizer isn't tested with premium child themes. It is meant to replace the need to edit your CSS file in your Genesis parent theme custom child theme.
+It should work fine with just about any custom child theme, but options on premium themes work will probably not work correctly. There are future plans to incorporate add-ons for premium child themes.
 
 
 == Screenshots ==
@@ -56,6 +56,16 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.0.1 - May 26, 2015 =
+* Header image background-size set to "contain" to utilize logo width & height.
+* Fixed min-height header size (set to initialize outside of mobile query) so it overrides default 160px.
+* Fixed width factor for footer widgets.
+* Added alignment options for primary & secondary menus.
+* Added option for eNews Extended widget "Slick Signup".
+* Updated header settings descriptions.
+* Updated plugin description.
+
 
 = 1.0 - April 18, 2015 =
 * Initial release.
@@ -74,7 +84,6 @@ Here are some planned updates for the near future
 * Additional Content customizations for entry meta, blockquotes, and more.
 * Genesis Premium Child Theme compatibility
 * Compatibility with other Featured Genesis plugins
-* Center aligned fixed header
 * Change Featured Image And Title Order
 * Shortcodes for adding theme colors throughout your site
 * Favicon Upload

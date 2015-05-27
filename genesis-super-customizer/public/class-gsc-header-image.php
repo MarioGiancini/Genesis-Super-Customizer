@@ -24,13 +24,14 @@ class GSC_Header_Image extends GSC_Base {
   //* Setup mods here to get for output.
   protected function get_mods() {
 
+    //* If the max width has been increased, change the logo max width also.
     if( $this->get_field_value( 'wrap_width' ) ) {
       $this->logo_width_max = $this->get_field_value( 'wrap_width' );
     }
 
     $this->mod_settings = array(
       'logo_width' => array(
-        'css'         => array( '.title-area', 'width', '', 'px', true, array( 'media_query' => 'min-width: ' . $this->desktop_min_size . 'px' ) ),
+        'css'         => array( '.title-area', 'width', '', 'px' ),
         'priority'    => 10,
         'type'        => 'range',
         'default'     => 360,
@@ -46,7 +47,7 @@ class GSC_Header_Image extends GSC_Base {
         'css'         => array( '.title-area', 'height', '', 'px', true, array(
           // 'media_query'   => 'min-width: ' . $this->desktop_min_size . 'px',
           'affects'       => array( '.site-header .genesis-nav-menu > li > a', '.header-image .title-area', '.header-image .site-title > a'  ),
-          'affects_values'=> array( '.site-header .genesis-nav-menu > li > a' => 'line-height: ' .  $this->get_field_value( 'logo_height' ) . 'px; padding-top: 0px; padding-bottom: 0px;', '.header-image .title-area' => 'padding: 0;', '.header-image .site-title > a' => 'min-height: initial; height: ' .  $this->get_field_value( 'logo_height' ) . 'px;' )
+          'affects_values'=> array( '.site-header .genesis-nav-menu > li > a' => 'line-height: ' .  $this->get_field_value( 'logo_height' ) . 'px; padding-top: 0px; padding-bottom: 0px;', '.header-image .title-area' => 'padding: 0;', '.header-image .site-title > a' => 'background-size: contain !important; min-height: initial; height: ' .  $this->get_field_value( 'logo_height' ) . 'px;' )
         ) ),
         'priority'    => 10,
         'type'        => 'range',
@@ -56,7 +57,7 @@ class GSC_Header_Image extends GSC_Base {
           'max'   => 200,
           'step'  => 5,
         ),
-        'description' => 'If you adjust this you may have to re-upload your logo for the new size.',
+        'description' => 'If you adjust this you may have to re-upload your logo for the new size. Save, close, and reopen customizer to see changes in description above.',
         'option'      => true,
       ),
       'flex_crop' => array(
@@ -91,6 +92,19 @@ class GSC_Header_Image extends GSC_Base {
         'type'        => 'checkbox',
         'default'     => 0,
         'label'       => 'Make Header Image Full Width',
+        'option'      => true,
+      ),
+      'force_fullwidth_image' => array(
+        'css'         => array( '.title-area', 'width', '', '% !important', true, array(
+          'media_query' => 'max-width: ' . $this->mobile_max_size . 'px',
+          'checkbox'    => true,
+          'value'       => '100',
+        ) ),
+        'priority'    => 10,
+        'type'        => 'checkbox',
+        'default'     => 0,
+        'label'       => 'Force Mobile Fullwidth Image',
+        'description' => 'Force the header image / logo to be full width instead of specified logo width on mobile screens.',
         'option'      => true,
       ),
       'center_image' => array(

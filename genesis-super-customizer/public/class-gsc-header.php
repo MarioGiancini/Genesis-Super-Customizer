@@ -37,8 +37,7 @@ class GSC_Header extends GSC_Base {
     $this->mod_settings = array(
       'header_size' => array(
         'css'         => array( '.site-header', 'height', '', 'px', true, array(
-          'media_query' => 'min-width: ' . $this->desktop_min_size . 'px',
-          'uses'        => array( 'min-height' => 'initial' )
+          'media_query' => 'min-width: ' . $this->desktop_min_size . 'px'
         ) ),
         'priority'    => 10,
         'type'        => 'range',
@@ -48,11 +47,15 @@ class GSC_Header extends GSC_Base {
           'max'   => 200,
           'step'  => 5,
         ),
-        'description' => 'Sets the height for the header. Recommened: Logo Height + Header Padding.',
+        'description' => 'Sets the height for the header. Recommened: Logo Height + (Header Padding x 2). Used for fixed header and other settings.',
         'option'      => true,
       ),
       'header_padding' => array(
-        'css'         => array( '.site-header .wrap', 'padding-top padding-bottom', '', 'px' ),
+        'css'         => array( '.site-header .wrap', 'padding-top padding-bottom', '', 'px', true, array(
+          // moved here from header_size to be outside of media query
+          'affects'         => array( '.site-header' ),
+          'affects_values'  => array( '.site-header' => 'min-height: initial;' )
+        ) ),
         'priority'    => 10,
         'type'        => 'range',
         'default'     => 40,
@@ -61,6 +64,7 @@ class GSC_Header extends GSC_Base {
           'max'   => 100,
           'step'  => 5,
         ),
+        'description' => 'Sets the top and bottom padding for the header.',
         'option'      => true,
       ),
       'fullwidth_header' => array(

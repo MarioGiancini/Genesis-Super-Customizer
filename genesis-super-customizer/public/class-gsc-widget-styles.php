@@ -61,6 +61,21 @@ class GSC_Widget_Styles extends GSC_Base {
         'decimal'     => true,
         'option'      => true,
       ),
+      'widget_enews_slick_signup' => array(
+        'css'         => array( '.enews-widget input[type="submit"]', 'position', '', '', true, array(
+          'checkbox'        => true,
+          'value'           => 'absolute',
+          'uses'            => array( 'bottom' => '1px', 'margin' => '0', 'padding' => '16px', 'right' => '1px', 'width' => 'initial' ),
+          'affects'         => array( '.enews #subscribe', '.enews-widget input[type="email"]' ),
+          'affects_values'  => array( '.enews #subscribe' => 'position: relative;', '.enews-widget input[type="email"]' => 'margin-bottom: 0; padding-right: 100px;' )
+        ) ),
+        'priority'    => 10,
+        'type'        => 'checkbox',
+        'default'     => 0,
+        'label'       => 'Enable eNews Slick Signup',
+        'description' => 'Add "slick signup" style to eNews Extended widget. Puts the subscribe button inside the email input.',
+        'option'      => true,
+      )
     );
 
   }
