@@ -13,10 +13,16 @@ The easiest way to customize the design of your Genesis theme, right from the Wo
 
 == Description ==
 
-Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, and much more, all through the native Wordpress Customizer interface.
-It's the easiest way to customize the design of the Genesis theme or your custom child theme. Please note this plugin requires the Genesis theme to be activated.
+Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, edit footer credits, and much more, all through the native Wordpress Customizer interface.
+It's the easiest way to customize the design of the Genesis theme or your custom Genesis child theme.
+
+There's over 100 options to customize and tinker with, but you can easily change the look and feel of your Genesis theme with just a few options.
+
+You can import and export your design templates. Use them as starter templates to speed up your design process.
 
 More information can be found at [http://supercustomizer.com](http://supercustomizer.com "Genesis Super Customizer").
+
+Please note this plugin requires the Genesis theme (a premium WordPress theme) to be activated.
 
 
 == Installation ==
@@ -47,6 +53,7 @@ It should work fine with just about any custom child theme, but options on premi
 
 == Screenshots ==
 
+1. Overview of customizer option sections.
 
 == Support ==
 
