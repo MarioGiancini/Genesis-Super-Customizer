@@ -68,6 +68,12 @@ Detailed documentation is coming soon.
 
 == Changelog ==
 
+= 1.0.2 - May 28, 2015
+* Added title area padding option to help center title & description within logo height.
+* Updated FAQs.
+* Typo fixes.
+
+
 = 1.0.1 - May 26, 2015 =
 * Header image background-size set to "contain" to utilize logo width & height.
 * Fixed min-height header size (set to initialize outside of mobile query) so it overrides default 160px.
