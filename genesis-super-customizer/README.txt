@@ -4,7 +4,7 @@ Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,10 @@ Please note this plugin requires the Genesis theme (a premium WordPress theme) t
 From your WordPress admin navigate to the Genesis > Import/Export menu. Click "Choose File"
 and location your .json customizer template file. Click "Upload File and Import". You should see
 a success notification on the top.
+
+= How do I export my genesis super customizer setting to a template? =
+
+Just like importing a template, navigate to the Genesis > Import/Export menu. Check "Customizer Settings" under the Export Genesis Settings File dialog. Then click the Download Export File button.
 
 = How do I reset the genesis super customizer options? =
 

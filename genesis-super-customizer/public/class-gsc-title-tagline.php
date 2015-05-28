@@ -150,6 +150,18 @@ class GSC_Title_Tagline extends GSC_Base {
         'default'     => 0,
         'option'      => true,
       ),
+      'title_area_padding' => array(
+        'css'         => array( '.title-area', 'padding-top padding-bottom', '', 'px' ),
+        'priority'    => 10,
+        'type'        => 'range',
+        'default'     => 10,
+        'input_attrs' => array(
+          'min'   => 0,
+          'max'   => 40,
+        ),
+        'description' => 'Top and bottom padding for title area. Use to help center text within the logo height setting.',
+        'option'      => true,
+      ),
       'center_title_text' => array(
         'css'         => array( '.title-area', 'text-align', '', '', true, array(
           'checkbox'        => true,
@@ -159,7 +171,7 @@ class GSC_Title_Tagline extends GSC_Base {
         'type'        => 'checkbox',
         'default'     => 0,
         'label'       => 'Center The Title Text',
-        'description' => 'Also senters the description text.',
+        'description' => 'Also centers the description text.',
         'option'      => true,
       )
     );
