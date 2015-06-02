@@ -51,8 +51,13 @@ Import the same as you would any other template (instructions above). There are 
 
 = Does it work with premium Genesis child themes? =
 
-At the moment Genesis Super Customizer isn't tested with premium child themes. It is meant to replace the need to edit your CSS file in your Genesis parent theme custom child theme.
-It should work fine with just about any custom child theme, but options on premium themes work will probably not work correctly. There are future plans to incorporate add-ons for premium child themes.
+At the moment Genesis Super Customizer isn't tested with premium child themes. It is meant to replace the need to edit your CSS file in your Genesis parent theme or custom child theme (like the Sample Child theme).
+It should work fine with just about any custom child theme, but options on premium themes will probably not work correctly. There are future plans to incorporate add-ons for premium child themes.
+
+UPDATE: Enterprise Pro seems works fine with one known caveat. The .site-inner section floats to the left. This is because the .wrap max-width also effects the .site-inner width (meant to replace the CSS from the Genesis parent theme).
+To fix it, simply add this CSS line to your wp_head() scripts in your Genesis settings, or to your styles.css file:
+
+.site-inner { max-width: initial !important; }
 
 
 == Screenshots ==
@@ -68,7 +73,7 @@ Detailed documentation is coming soon.
 
 == Changelog ==
 
-= 1.0.2 - May 28, 2015
+= 1.0.2 - May 28, 2015 =
 * Added title area padding option to help center title & description within logo height.
 * Updated FAQs.
 * Typo fixes.
