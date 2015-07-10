@@ -70,7 +70,7 @@ class Geneis_Super_Customizer {
   public function __construct() {
 
     $this->plugin_name = 'genesis-super-customizer';
-    $this->version = '1.0.2';
+    $this->version = '1.0.3';
 
     $this->load_dependencies();
     $this->set_locale();
@@ -102,6 +102,11 @@ class Geneis_Super_Customizer {
     * Helper functions outside of classes.
     */
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/gsc-helpers.php';
+
+    /**
+    * Shortcodes to enhance design.
+    */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/gsc-shortcodes.php';
 
     /**
     * The class responsible for orchestrating the actions and filters of the core.

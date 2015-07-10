@@ -8,7 +8,7 @@ Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The easiest way to customize the design of your Genesis theme, right from the WordPress Customizer.
+The easiest way to customize the design of the Genesis theme, right from the WordPress Customizer.
 
 
 == Description ==
@@ -16,7 +16,28 @@ The easiest way to customize the design of your Genesis theme, right from the Wo
 Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, edit footer credits, and much more, all through the native Wordpress Customizer interface.
 It's the easiest way to customize the design of the Genesis theme or your custom Genesis child theme.
 
+IMPORTANT DISCLAIMER: This plugin is designed to work with the Genesis Framework and the Genesis Sample Child Theme only, not premium Genesis child themes like Author Pro, Parallax Pro, etc. It duplicates and overrides the stylesheet for the Genesis theme or Sample Child Theme (or your custom theme based off of the Sample Child Theme) as a starting point for design. It will override your current styles so it best to try it out on a staging site first, or start off by developing your site with just Genesis and GSC.
+
 There's over 100 options to customize and tinker with, but you can easily change the look and feel of your Genesis theme with just a few options.
+
+NEW: Shortcodes are now included for the theme colors chosen with the customizer:
+[themecolor] - Add the main theme color to text
+[themebg] - Add the main theme color to the background
+[accentcolor] - Add the accent color to text
+[accentbg] - Add the accent color to the background
+[bgcolor] - Add the background color to text
+[mainbg] - Add the main background color to the background
+
+You can use html in the shortcodes and they are stackable as well:
+[themebg]This is an [bgcolor]example[/bgcolor] of awesome genesis super customizer shortcodes. [accentbg][bgcolor]Check out this[/bgcolor] <a href="http://supercustomizer.com">link</a>.[/accentbg][/themebg]
+
+For designers that want to use html you can instead use the classes that each shortcode corresponds to and add them to html elements.
+[themecolor] - theme-color
+[themebg] - theme-bg
+[accentcolor] - accent-color
+[accentbg] - accent-bg
+[bgcolor] - bg-color
+[mainbg] - main-bg
 
 You can import and export your design templates. Use them as starter templates to speed up your design process.
 
@@ -49,13 +70,13 @@ Just like importing a template, navigate to the Genesis > Import/Export menu. Ch
 In the current version, you need to upload the default settings .json file. You can find that template at [http://supercustomizer.com/downloads/genesis-default-settings/](http://supercustomizer.com/downloads/genesis-default-settings/ "Genesis Super Customizer Default Settings").
 Import the same as you would any other template (instructions above). There are future plans for a simple reset button.
 
-= Does it work with premium Genesis child themes? =
+= Does it work with premium Genesis child themes from StudioPress? =
 
-At the moment Genesis Super Customizer isn't tested with premium child themes. It is meant to replace the need to edit your CSS file in your Genesis parent theme or custom child theme (like the Sample Child theme).
-It should work fine with just about any custom child theme, but options on premium themes will probably not work correctly. There are future plans to incorporate add-ons for premium child themes.
+In short, no. Genesis Super Customizer isn't tested with premium child themes such as Parallax Pro, Author Pro, etc. It is meant to replace the need to edit your CSS file in your Genesis parent theme or custom child theme (like the Sample Child theme).
+It should work fine with just about any custom child theme based off of the Sample Child theme, but options on premium themes will probably not work correctly. There are future plans to incorporate add-ons for premium child themes.
 
-UPDATE: Enterprise Pro seems works fine with one known caveat. The .site-inner section floats to the left. This is because the .wrap max-width also effects the .site-inner width (meant to replace the CSS from the Genesis parent theme).
-To fix it, simply add this CSS line to your wp_head() scripts in your Genesis settings, or to your styles.css file:
+UPDATE: Enterprise Pro seems works fine since the base styles are very similar, with one known caveat. The .site-inner section floats to the left. This is because the .wrap max-width also effects the .site-inner width (meant to replace the CSS from the Genesis parent theme).
+To fix it, simply add this CSS line to your wp_head() scripts (uses <style> tags) in your Genesis settings, or to your styles.css file:
 
 .site-inner { max-width: initial !important; }
 
@@ -72,6 +93,12 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.0.3 - July 10, 2015 =
+* Added shortcodes for colors chosen in the customizer.
+* Updated plugin description.
+* Updated FAQs.
+
 
 = 1.0.2 - May 28, 2015 =
 * Added title area padding option to help center title & description within logo height.

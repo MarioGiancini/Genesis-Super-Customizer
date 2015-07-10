@@ -39,7 +39,7 @@ class GSC_Colors extends GSC_Base {
         'option'      => true,
       ),
       'bg_color' => array(
-        'css'         => array( 'body', 'background-color' ),
+        'css'         => array( 'body, .main-bg', 'background-color', '', '', true, array( 'siblings' => array( '.bg-color' => 'color' ) ) ),
         'priority'    => 10,
         'type'        => 'color',
         'default'     => '',
