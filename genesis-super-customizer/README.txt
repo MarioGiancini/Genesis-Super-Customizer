@@ -16,28 +16,31 @@ The easiest way to customize the design of the Genesis theme, right from the Wor
 Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, edit footer credits, and much more, all through the native Wordpress Customizer interface.
 It's the easiest way to customize the design of the Genesis theme or your custom Genesis child theme.
 
-IMPORTANT DISCLAIMER: This plugin is designed to work with the Genesis Framework and the Genesis Sample Child Theme only, not premium Genesis child themes like Author Pro, Parallax Pro, etc. It duplicates and overrides the stylesheet for the Genesis theme or Sample Child Theme (or your custom theme based off of the Sample Child Theme) as a starting point for design. It will override your current styles so it best to try it out on a staging site first, or start off by developing your site with just Genesis and GSC.
+IMPORTANT DISCLAIMER: This plugin is designed to work with the Genesis Framework and the Genesis Sample Child Theme only, not premium Genesis child themes like Author Pro, Parallax Pro, etc. It duplicates and overrides the stylesheet for the Genesis theme or Sample Child Theme (or your custom theme based off of the Sample Child Theme) as a starting point for design. It will override your current styles so it's best to try it out on a staging site first, or start off by developing your site with just Genesis and GSC.
 
 There's over 100 options to customize and tinker with, but you can easily change the look and feel of your Genesis theme with just a few options.
 
 NEW: Shortcodes are now included for the theme colors chosen with the customizer:
-[themecolor] - Add the main theme color to text
-[themebg] - Add the main theme color to the background
-[accentcolor] - Add the accent color to text
-[accentbg] - Add the accent color to the background
-[bgcolor] - Add the background color to text
-[mainbg] - Add the main background color to the background
+
+* [themecolor] - Add the main theme color to text
+* [themebg] - Add the main theme color to the background
+* [accentcolor] - Add the accent color to text
+* [accentbg] - Add the accent color to the background
+* [bgcolor] - Add the background color to text
+* [mainbg] - Add the main background color to the background
 
 You can use html in the shortcodes and they are stackable as well:
-[themebg]This is an [bgcolor]example[/bgcolor] of awesome genesis super customizer shortcodes. [accentbg][bgcolor]Check out this[/bgcolor] <a href="http://supercustomizer.com">link</a>.[/accentbg][/themebg]
+
+[themebg]This is an [bgcolor]example[/bgcolor] of awesome genesis super customizer shortcodes. [accentbg][bgcolor]Check out this[/bgcolor] `<a href="http://supercustomizer.com">link</a>`.[/accentbg][/themebg]
 
 For designers that want to use html you can instead use the classes that each shortcode corresponds to and add them to html elements.
-[themecolor] - theme-color
-[themebg] - theme-bg
-[accentcolor] - accent-color
-[accentbg] - accent-bg
-[bgcolor] - bg-color
-[mainbg] - main-bg
+
+* [themecolor] - theme-color
+* [themebg] - theme-bg
+* [accentcolor] - accent-color
+* [accentbg] - accent-bg
+* [bgcolor] - bg-color
+* [mainbg] - main-bg
 
 You can import and export your design templates. Use them as starter templates to speed up your design process.
 
