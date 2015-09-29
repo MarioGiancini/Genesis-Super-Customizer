@@ -82,6 +82,14 @@ class GSC_Colors extends GSC_Base {
         'description' => 'For heading tags h1 through h6.',
         'option'      => true,
       ),
+      'link_decoration' => array(
+        'css'         => array( 'a, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu .current-menu-item > a', 'text-decoration' ),
+        'priority'    => 10,
+        'type'        => 'select',
+        'default'     => 'None',
+        'choices'     => $this->decorations,
+        'option'      => true,
+      ),
       'override_link_colors' => array(
         'css'         => array(),
         'priority'    => 10,

@@ -12,9 +12,17 @@
 
 class GSC_Nav extends GSC_Base {
 
-  protected $new_section = false;
+  protected $new_section = true;
 
-  protected $mod_section = 'nav';
+  protected $mod_section = 'menu_styles';
+
+  protected $section_title = 'Menus Styles';
+
+  protected $section_desc = 'Styles for menus and menu items.';
+
+  protected $section_priority = 4;
+
+  protected $mod_panel = 'nav_menus';
 
   //* Setup mods here to get for output
   protected function get_mods() {
@@ -112,7 +120,7 @@ class GSC_Nav extends GSC_Base {
         'css'         => array(),
         'priority'    => 10,
         'type'        => 'checkbox',
-        'default'     => 0,
+        'default'     => null,
         'label'       => 'Override Theme Menu Colors',
         'description' => 'By default your header navigation will adopt the theme colors. Check to override them and options will appear below.',
         'option'      => true,

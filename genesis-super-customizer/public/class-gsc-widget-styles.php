@@ -66,8 +66,8 @@ class GSC_Widget_Styles extends GSC_Base {
           'checkbox'        => true,
           'value'           => 'absolute',
           'uses'            => array( 'bottom' => '1px', 'margin' => '0', 'padding' => '16px', 'right' => '1px', 'width' => 'initial' ),
-          'affects'         => array( '.enews #subscribe', '.enews-widget input[type="email"]' ),
-          'affects_values'  => array( '.enews #subscribe' => 'position: relative;', '.enews-widget input[type="email"]' => 'margin-bottom: 0; padding-right: 100px;' )
+          'affects'         => array( '.enews form', '.enews-widget input[type="email"]' ),
+          'affects_values'  => array( '.enews form' => 'position: relative;', '.enews-widget input[type="email"]' => 'margin-bottom: 0; padding-right: 100px;' )
         ) ),
         'priority'    => 10,
         'type'        => 'checkbox',

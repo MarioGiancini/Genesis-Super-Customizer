@@ -89,13 +89,27 @@ class GSC_Public {
 			remove_theme_support( 'custom-header' );
 		}
 
+		//* Default values
+		$logo_width 	= 360;
+		$logo_height 	= 80;
+		$flex_width 	= false;
+		$flex_height 	= false;
+
+		//* If this Genesis function has been declaired first, then assign customizer values. Sometimes showed an error.
+		if( function_exists( 'genesis_get_option' ) ) {
+			$logo_width 	= genesis_get_option( 'logo_width', 'genesis-customizer-settings' );
+			$logo_height 	= genesis_get_option( 'logo_height', 'genesis-customizer-settings' );
+			$flex_width 	= genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) === 1 ? true : false;
+			$flex_height 	= genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) === 1 ? true : false;
+		}
+
 		//* Add custom header support with option settings
 		add_theme_support( 'custom-header', array(
-		    'width'           => genesis_get_option( 'logo_width', 'genesis-customizer-settings' ),
-		    'height'          => genesis_get_option( 'logo_height', 'genesis-customizer-settings' ),
+		    'width'           => $logo_width,
+		    'height'          => $logo_height,
 		    'header-selector' => '.site-title a',
-		    'flex-width'      => genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) === 1 ? true : false,
-		    'flex-height'     => genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) === 1 ? true : false,
+		    'flex-width'      => $flex_width,
+		    'flex-height'     => $flex_height,
 		  )
 		);
 

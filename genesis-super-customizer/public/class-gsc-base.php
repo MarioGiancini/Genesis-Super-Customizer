@@ -94,6 +94,14 @@ abstract class GSC_Base {
     'center'=> 'Center'
   );
 
+  //* Text alignment options
+  public $decorations = array(
+    'initial'     => 'None',
+    'underline'   => 'Underline',
+    'line-through'=> 'Line-through',
+    'overline'    => 'Overline'
+  );
+
   public $border_styles = array(
     'dashed'  => 'Dashed',
     'dotted'  => 'Dotted',
@@ -220,7 +228,7 @@ abstract class GSC_Base {
     $this->get_mods();
 
     if( $this->new_panel === true ) {
-      $wp_customize->add_panel( 'panel_id', array(
+      $wp_customize->add_panel( $this->mod_section, array(
         'title'          => __( $this->panel_title, 'genesis' ),
         'description'    => __( $this->panel_desc, 'genesis' ),
         'priority'       => $this->panel_priority

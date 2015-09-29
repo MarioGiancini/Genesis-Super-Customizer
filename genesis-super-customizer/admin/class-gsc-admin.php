@@ -120,8 +120,7 @@ class GSC_Admin {
 		$wp_customize->get_control( 'display_header_text' )->description = 'Applies if you have are using a header image.';
 		$wp_customize->get_section( 'colors' )->title = 'Theme Colors';
 		$wp_customize->get_section( 'colors' )->description = 'Set your theme colors here. Links and titles will automatically be colored to match the main theme colors, or you can adjust individual settings in other sections.';
-		$wp_customize->get_section( 'nav' )->title = 'Menus And Navigation';
-
+		
 		$wp_customize->remove_control('background_color');
 		$wp_customize->remove_control('header_textcolor');
 

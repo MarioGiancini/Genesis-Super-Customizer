@@ -3,8 +3,8 @@ Contributors: Mario Giancini
 Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
-Tested up to: 4.2.2
-Stable tag: 1.0.3
+Tested up to: 4.3.1
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,14 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.0.4 - September 29, 2015 =
+* Menus and Navigation section is now a under the Menus section and renamed to Menu Styles to comply with new Customizer updates.
+* Fixed undefined call to genesis_get_option error.
+* Fixed Enews Slick Form. Form was not assigned position: relative correctly.
+* Added Link Decoration option to be able to override new Genesis 2.2.2 styles.
+* Updated plugin description.
+
 
 = 1.0.3 - July 10, 2015 =
 * Added shortcodes for colors chosen in the customizer.
