@@ -90,6 +90,15 @@ class GSC_Colors extends GSC_Base {
         'choices'     => $this->decorations,
         'option'      => true,
       ),
+      'link_hover_decoration' => array(
+        'css'         => array( 'a:hover, a:focus, .genesis-nav-menu a:hover, .genesis-nav-menu a:focus, .genesis-nav-menu .current-menu-item > a, .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .genesis-nav-menu .sub-menu .current-menu-item > a:focus', 'text-decoration' ),
+        'priority'    => 10,
+        'type'        => 'select',
+        'default'     => 'None',
+        'description' => 'Text decoration for link hover and focus.',
+        'choices'     => $this->decorations,
+        'option'      => true,
+      ),
       'override_link_colors' => array(
         'css'         => array(),
         'priority'    => 10,

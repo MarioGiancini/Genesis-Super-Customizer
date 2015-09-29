@@ -4,7 +4,7 @@ Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
 Tested up to: 4.3.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.0.5 - September 29, 2015 =
+* Added Link Decoration option for hover and focus states.
+
 
 = 1.0.4 - September 29, 2015 =
 * Menus and Navigation section is now a under the Menus section and renamed to Menu Styles to comply with new Customizer updates.
