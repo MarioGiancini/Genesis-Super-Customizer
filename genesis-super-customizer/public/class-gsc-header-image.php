@@ -66,6 +66,7 @@ class GSC_Header_Image extends GSC_Base {
         'type'        => 'checkbox',
         'default'     => 0,
         'label'       => 'Enable Flexable Image Cropping',
+        'description' => 'When you update this option, close out and restart Customizer for it to take effect.',
         'option'      => true,
       ),
       'header_hover_opacity' => array(

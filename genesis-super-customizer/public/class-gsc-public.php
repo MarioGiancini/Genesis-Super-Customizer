@@ -99,8 +99,8 @@ class GSC_Public {
 		if( function_exists( 'genesis_get_option' ) ) {
 			$logo_width 	= genesis_get_option( 'logo_width', 'genesis-customizer-settings' );
 			$logo_height 	= genesis_get_option( 'logo_height', 'genesis-customizer-settings' );
-			$flex_width 	= genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) === 1 ? true : false;
-			$flex_height 	= genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) === 1 ? true : false;
+			$flex_width 	= genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) ? true : false;
+			$flex_height 	= genesis_get_option( 'flex_crop', 'genesis-customizer-settings' ) ? true : false;
 		}
 
 		//* Add custom header support with option settings

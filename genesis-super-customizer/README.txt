@@ -3,8 +3,8 @@ Contributors: Mario Giancini
 Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.0.5
+Tested up to: 4.4
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,12 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.0.6 - December 5, 2015 =
+* Fixed focus state colors to adopt theme color for buttons and menu links.
+* Fixed flex crop feature, wasn't checking value correctly.
+* Updated for WordPress 4.4 compatibility
+
 
 = 1.0.5 - September 29, 2015 =
 * Added Link Decoration option for hover and focus states.
