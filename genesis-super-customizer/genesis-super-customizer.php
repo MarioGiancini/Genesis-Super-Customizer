@@ -81,7 +81,14 @@ function run_genesis_super_customizer() {
 * @since    1.0.0
 */
 if ( 'genesis' != wp_basename( get_template_directory() ) ) {
-  deactivate_plugins( plugin_basename( __FILE__ ) );
+  add_action( 'admin_init', 'gsc_deactivate' );
+  add_action( 'admin_notices', 'gsc_admin_notice' );
+  function gsc_deactivate() {
+    deactivate_plugins( plugin_basename( __FILE__ ) );
+  }
+  function gsc_admin_notice() {
+    echo '<div class="updated notice is-dismissible"><p><strong>Genesis Super Customizer</strong> has been <strong>deactivated</strong> because it requires the Genensis framework.</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>';
+  }
 } else {
   run_genesis_super_customizer();
 }
