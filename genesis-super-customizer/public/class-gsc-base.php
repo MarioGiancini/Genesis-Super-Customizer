@@ -468,9 +468,9 @@ abstract class GSC_Base {
       //* Update genesis option with max value;
       if( $option_type === true ) {
 
-        $geneses_options = get_option( $this->settings_field );
-        $geneses_options[ $mod_name ] = $mod;
-        update_option( $this->settings_field, $geneses_options);
+        $genesis_options = get_option( $this->settings_field );
+        $genesis_options[ $mod_name ] = $mod;
+        update_option( $this->settings_field, $genesis_options);
 
       }
 
@@ -484,9 +484,9 @@ abstract class GSC_Base {
       //* Update genesis option with min value;
       if( $option_type === true ) {
 
-        $geneses_options = get_option( $this->settings_field );
-        $geneses_options[ $mod_name ] = $mod;
-        update_option( $this->settings_field, $geneses_options);
+        $genesis_options = get_option( $this->settings_field );
+        $genesis_options[ $mod_name ] = $mod;
+        update_option( $this->settings_field, $genesis_options);
 
       }
 
