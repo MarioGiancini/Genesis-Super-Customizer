@@ -128,11 +128,6 @@ abstract class GSC_Base {
       add_action( 'customize_preview_init', array( $this, 'scripts' ) );
     }
 
-    //* Customizer Active Callback Filter
-    if ( method_exists( $this, 'active_filter' ) ) {
-      add_filter( 'customize_control_active', array( $this, 'active_filter' ), 10, 2 );
-    }
-
     //* Set method in media queries class
     if  ( method_exists( $this, 'do_media_queries' ) ) {
       add_action( 'wp_head', array( $this, 'do_media_queries' ) );

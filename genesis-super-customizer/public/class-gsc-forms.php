@@ -75,17 +75,17 @@ class GSC_Forms extends GSC_Base {
         'decimal'     => true,
         'option'      => true,
       ),
-      'overwrite_input_colors' => array(
+      'override_input_colors' => array(
         'css'         => array(),
         'priority'    => 10,
         'type'        => 'checkbox',
         'default'     => 0,
-        'description' => 'This will overwrite the theme accent color defaults for the items below.',
+        'description' => 'This will overwrite the theme accent color defaults for the input items below.',
         'option'      => true,
       ),
       'placeholder_text_color' => array(
         'css'         => array( '::-webkit-input-placeholder', 'color', '', '', true, array(
-          'requires' => array( 'overwrite_input_colors' ),
+          'requires' => array( 'override_input_colors' ),
           'siblings' => array( ':-moz-placeholder' => 'color', '::-moz-placeholder' => 'color', ':-ms-input-placeholder' => 'color' )
         ) ),
         'priority'    => 10,
@@ -93,13 +93,15 @@ class GSC_Forms extends GSC_Base {
         'default'     => '',
         'description' => 'Affects inputs, textareas, and select boxes.',
         'option'      => true,
+        'active_callback' => 'override_input_colors',
       ),
       'input_focus_border_color' => array(
-        'css'         => array( 'input:focus, textarea:focus, .enews-widget input:focus', 'border-color', '', '', true, array( 'rgba' => 'input_focus_border_alpha', 'requires' => array( 'overwrite_input_colors' ) ) ),
+        'css'         => array( 'input:focus, textarea:focus, .enews-widget input:focus', 'border-color', '', '', true, array( 'rgba' => 'input_focus_border_alpha', 'requires' => array( 'override_input_colors' ) ) ),
         'priority'    => 10,
         'type'        => 'color',
         'default'     => '',
         'option'      => true,
+        'active_callback' => 'override_input_colors',
       ),
       'input_focus_border_alpha' => array(
         'css'         => array(),
@@ -113,23 +115,10 @@ class GSC_Forms extends GSC_Base {
         ),
         'decimal'     => true,
         'option'      => true,
+        'active_callback' => 'override_input_colors',
       )
     );
 
-  }
-
-  /**
-  * Filter specific controls to show within content
-  */
-  public function active_filter( $active, $control ) {
-
-    //* Show color override options if override is checked
-    if ( $control->id === 'placeholder_text_color' || $control->id === 'input_focus_border_color' || $control->id === 'input_focus_border_alpha' ) {
-      $option = $control->manager->get_setting( $this->get_field_name( 'overwrite_input_colors' ) );
-      $active = $option->value();
-    }
-
-    return $active;
   }
 
 } // end class

@@ -42,6 +42,7 @@ class GSC_Buttons extends GSC_Base {
         'default'     => '#333',
         'label'       => 'Button Background Color',
         'option'      => true,
+        'active_callback' => 'override_button_colors',
       ),
       'button_hover_color' => array(
         'css'         => array( 'button:hover, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover', 'background-color', '', '', true, array( 'requires' => array( 'override_button_colors' ) ) ),
@@ -49,6 +50,7 @@ class GSC_Buttons extends GSC_Base {
         'type'        => 'color',
         'default'     => '#e5554e',
         'option'      => true,
+        'active_callback' => 'override_button_colors',
       ),
       'button_text_color' => array(
         'css'         => array( 'button, input[type="button"], input[type="reset"], input[type="submit"], .button', 'color', '', '', true, array( 'requires' => array( 'override_button_colors' ) ) ),
@@ -56,6 +58,7 @@ class GSC_Buttons extends GSC_Base {
         'type'        => 'color',
         'default'     => '#fff',
         'option'      => true,
+        'active_callback' => 'override_button_colors',
       ),
       'button_text_hover_color' => array(
         'css'         => array( 'button:hover, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover', 'color', '', '', true, array( 'requires' => array( 'override_button_colors' ) ) ),
@@ -63,6 +66,7 @@ class GSC_Buttons extends GSC_Base {
         'type'        => 'color',
         'default'     => '#fff',
         'option'      => true,
+        'active_callback' => 'override_button_colors',
       ),
       'button_font_size' => array(
         'css'         => array( 'button, input[type="button"], input[type="reset"], input[type="submit"], .button', 'font-size', '', 'px' ),
@@ -154,20 +158,6 @@ class GSC_Buttons extends GSC_Base {
       )
     );
 
-  }
-
-  /**
-  * Filter specific controls to show within content
-  */
-  public function active_filter( $active, $control ) {
-
-    //* Show color override options if override is checked
-    if ( $control->id === 'button_color' || $control->id === 'button_hover_color' || $control->id === 'button_text_color' || $control->id === 'button_text_hover_color' ) {
-      $option = $control->manager->get_setting( $this->get_field_name( 'override_button_colors' ) );
-      $active = $option->value();
-    }
-
-    return $active;
   }
 
 } // end class

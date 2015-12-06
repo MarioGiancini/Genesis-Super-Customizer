@@ -113,6 +113,7 @@ class GSC_Colors extends GSC_Base {
         'type'        => 'color',
         'default'     => '#e5554e',
         'option'      => true,
+        'active_callback' => 'override_link_colors',
       ),
       'link_hover_color' => array(
         'css'         => array( 'a:hover', 'color', '', '', true, array( 'requires' => array( 'override_link_colors' ) ) ),
@@ -120,6 +121,7 @@ class GSC_Colors extends GSC_Base {
         'type'        => 'color',
         'default'     => '#333',
         'option'      => true,
+        'active_callback' => 'override_link_colors',
       ),
       'post_title_text_color' => array(
         'css'         => array( '.entry-title a', 'color', '', '', true, array( 'requires' => array( 'override_link_colors' ) ) ),
@@ -127,6 +129,7 @@ class GSC_Colors extends GSC_Base {
         'type'        => 'color',
         'default'     => '#333',
         'option'      => true,
+        'active_callback' => 'override_link_colors',
       ),
       'post_title_hover_color' => array(
         'css'         => array( '.entry-title a:hover', 'color', '', '', true, array( 'requires' => array( 'override_link_colors' ) ) ),
@@ -134,23 +137,10 @@ class GSC_Colors extends GSC_Base {
         'type'        => 'color',
         'default'     => '#e5554e',
         'option'      => true,
+        'active_callback' => 'override_link_colors',
       )
     );
 
-  }
-
-  /**
-  * Filter specific controls to show within content
-  */
-  public function active_filter( $active, $control ) {
-
-    //* Show color override options if override is checked
-    if ( $control->id === 'link_text_color' || $control->id === 'link_hover_color' || $control->id === 'post_title_text_color' || $control->id === 'post_title_hover_color' ) {
-      $option = $control->manager->get_setting( $this->get_field_name( 'override_link_colors' ) );
-      $active = $option->value();
-    }
-
-    return $active;
   }
 
 } // end class

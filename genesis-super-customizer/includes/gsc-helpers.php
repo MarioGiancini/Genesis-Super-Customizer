@@ -107,3 +107,48 @@ function hex2rgba($color, $alpha = false) {
   //Return rgb(a) color string
   return $output;
 }
+
+/**
+* Register the customizer mod callback functions for contextual controls
+*
+* @since    1.0.7
+*/
+function override_link_colors() {
+    if( genesis_get_option( 'override_link_colors', 'genesis-customizer-settings' ) ) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function override_button_colors() {
+    if( genesis_get_option( 'override_button_colors', 'genesis-customizer-settings' ) ) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function override_footer_colors() {
+    if( genesis_get_option( 'override_footer_colors', 'genesis-customizer-settings' ) ) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function override_input_colors() {
+    if( genesis_get_option( 'override_input_colors', 'genesis-customizer-settings' ) ) {
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function override_nav_colors() {
+    if( genesis_get_option( 'override_nav_colors', 'genesis-customizer-settings' ) ) {
+      return true;
+    } else {
+      return false;
+    }
+}

@@ -132,6 +132,7 @@ class GSC_Nav extends GSC_Base {
         'default'     => '',
         'label'       => 'Header Nav Item Background',
         'option'      => true,
+        'active_callback' => 'override_nav_colors',
       ),
       'header_nav_item_color' => array(
         'css'         => array( '.site-header .genesis-nav-menu a', 'color', '', '', true, array( 'requires' => array( 'override_nav_colors' ) ) ),
@@ -139,6 +140,7 @@ class GSC_Nav extends GSC_Base {
         'type'        => 'color',
         'default'     => '',
         'option'      => true,
+        'active_callback' => 'override_nav_colors',
       ),
       'header_nav_item_hover_color' => array(
         'css'         => array( '.site-header .genesis-nav-menu a:hover, .site-header .genesis-nav-menu .current-menu-item > a', 'color', '', '', true, array( 'requires' => array( 'override_nav_colors' ) ) ),
@@ -146,6 +148,7 @@ class GSC_Nav extends GSC_Base {
         'type'        => 'color',
         'default'     => '',
         'option'      => true,
+        'active_callback' => 'override_nav_colors',
       ),
       'header_nav_item_hover_bg' => array(
         'css'         => array( '.site-header .genesis-nav-menu a:hover,  .site-header .genesis-nav-menu .current-menu-item > a', 'background-color', '', '', true, array( 'requires' => array( 'override_nav_colors' ) ) ),
@@ -154,6 +157,7 @@ class GSC_Nav extends GSC_Base {
         'default'     => '',
         'label'       => 'Header Nav Item Hover Background',
         'option'      => true,
+        'active_callback' => 'override_nav_colors',
       ),
       'primary_nav_bg_color' => array(
         'css'         => array( '.nav-primary', 'background-color', '', '', true, array( 'requires' => array( 'override_nav_colors' ) ) ),
@@ -162,6 +166,7 @@ class GSC_Nav extends GSC_Base {
         'default'     => '',
         'label'       => 'Primary Navigation Background',
         'option'      => true,
+        'active_callback' => 'override_nav_colors',
       ),
       'secondary_nav_bg_color' => array(
         'css'         => array( '.nav-secondary', 'background-color', '', '', true, array( 'requires' => array( 'override_nav_colors' ) ) ),
@@ -170,23 +175,10 @@ class GSC_Nav extends GSC_Base {
         'default'     => '',
         'label'       => 'Secondary Navigation Background',
         'option'      => true,
+        'active_callback' => 'override_nav_colors',
       ),
     );
 
-  }
-
-  /**
-  * Filter specific controls to show within content
-  */
-  public function active_filter( $active, $control ) {
-
-    //* Show color override options if override is checked
-    if ( $control->id === 'header_nav_item_bg_color' || $control->id === 'header_nav_item_color' || $control->id === 'header_nav_item_hover_color' || $control->id === 'header_nav_item_hover_bg' || $control->id === 'primary_nav_bg_color' || $control->id === 'secondary_nav_bg_color' ) {
-      $option = $control->manager->get_setting( $this->get_field_name( 'override_nav_colors' ) );
-      $active = $option->value();
-    }
-
-    return $active;
   }
 
 } // end class

@@ -81,6 +81,7 @@ class GSC_Footer extends GSC_Base {
         'default'     => '#333',
         'label'       => 'Footer Widgets Background Color',
         'option'      => true,
+        'active_callback' => 'override_footer_colors',
       ),
       'footer_widgets_alpha' => array(
         'css'         => array(),
@@ -95,6 +96,7 @@ class GSC_Footer extends GSC_Base {
         ),
         'decimal'     => true,
         'option'      => true,
+        'active_callback' => 'override_footer_colors',
       ),
       'footer_title_color' => array(
         'css'         => array( '.footer-widgets .widget-title', 'color', '', '', true, array( 'requires' => array( 'override_footer_colors' ) ) ),
@@ -103,6 +105,7 @@ class GSC_Footer extends GSC_Base {
         'default'     => '#fff',
         'label'       => 'Footer Widgets Title Color',
         'option'      => true,
+        'active_callback' => 'override_footer_colors',
       ),
       'footer_text_color' => array(
         'css'         => array( '.footer-widgets', 'color', '', '', true, array( 'requires' => array( 'override_footer_colors' ) ) ),
@@ -110,6 +113,7 @@ class GSC_Footer extends GSC_Base {
         'type'        => 'color',
         'default'     => '#999',
         'option'      => true,
+        'active_callback' => 'override_footer_colors',
       ),
       'footer_link_color' => array(
         'css'         => array( '.footer-widgets a', 'color', '', '', true, array( 'requires' => array( 'override_footer_colors' ) ) ),
@@ -117,6 +121,7 @@ class GSC_Footer extends GSC_Base {
         'type'        => 'color',
         'default'     => '#999',
         'option'      => true,
+        'active_callback' => 'override_footer_colors',
       ),
       'footer_link_hover_color' => array(
         'css'         => array( '.footer-widgets a:hover', 'color', '', '', true, array( 'requires' => array( 'override_footer_colors' ) ) ),
@@ -124,23 +129,10 @@ class GSC_Footer extends GSC_Base {
         'type'        => 'color',
         'default'     => '#fff',
         'option'      => true,
+        'active_callback' => 'override_footer_colors',
       )
     );
 
-  }
-
-  /**
-  * Filter specific controls to show within content
-  */
-  public function active_filter( $active, $control ) {
-
-    //* Show color override options if override is checked
-    if ( $control->id === 'footer_widgets_background' || $control->id === 'footer_widgets_alpha' || $control->id === 'footer_title_color' || $control->id === 'footer_text_color' || $control->id === 'footer_link_color' || $control->id === 'footer_link_hover_color' ) {
-      $option = $control->manager->get_setting( $this->get_field_name( 'override_footer_colors' ) );
-      $active = $option->value();
-    }
-
-    return $active;
   }
 
 } // end class
