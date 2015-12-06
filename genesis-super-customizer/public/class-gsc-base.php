@@ -228,10 +228,11 @@ abstract class GSC_Base {
     $this->get_mods();
 
     if( $this->new_panel === true ) {
-      $wp_customize->add_panel( $this->mod_section, array(
-        'title'          => __( $this->panel_title, 'genesis' ),
-        'description'    => __( $this->panel_desc, 'genesis' ),
-        'priority'       => $this->panel_priority
+      $wp_customize->add_panel( $this->mod_panel, array(
+        'title'           => __( $this->panel_title, 'genesis' ),
+        'description'     => __( $this->panel_desc, 'genesis' ),
+        'priority'        => $this->panel_priority,
+        'active_callback' => $this->active_callback
         )
       );
     }
