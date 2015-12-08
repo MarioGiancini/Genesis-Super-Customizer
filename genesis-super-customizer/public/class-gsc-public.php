@@ -72,8 +72,10 @@ class GSC_Public {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( 'gsc-add-bumper', plugin_dir_url( __FILE__ ) . 'js/gsc-add-bumper.js', array( 'jquery' ), $this->version );
-		wp_enqueue_script( 'gsc-shrink-header', plugin_dir_url( __FILE__ ) . 'js/gsc-shrink-header.js', array( 'jquery' ), $this->version );
+		if( genesis_get_option( 'fixed_header', 'genesis-customizer-settings' ) ){
+			wp_enqueue_script( 'gsc-add-bumper', plugin_dir_url( __FILE__ ) . 'js/gsc-add-bumper.js', array( 'jquery' ), $this->version );
+			wp_enqueue_script( 'gsc-shrink-header', plugin_dir_url( __FILE__ ) . 'js/gsc-shrink-header.js', array( 'jquery' ), $this->version );
+		}
 
 	}
 
