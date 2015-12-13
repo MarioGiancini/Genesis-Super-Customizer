@@ -3,18 +3,11 @@
 /**
  * The public-facing functionality of the plugin.
  *
+ * Defines plugin name, version, and hooks to
+ * public stylesheets, JavaScript, and theme supports.
+ *
  * @link       http://supercustomizer.com
  * @since      1.0.0
- *
- * @package    Geneis_Super_Customizer
- * @subpackage Geneis_Super_Customizer/public
- */
-
-/**
- * The public-facing functionality of the plugin.
- *
- * Defines the plugin name, version, and hooks to
- * public stylesheets, JavaScript, and theme supports.
  *
  * @package    Geneis_Super_Customizer
  * @subpackage Geneis_Super_Customizer/public

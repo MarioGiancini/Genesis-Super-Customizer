@@ -1,21 +1,10 @@
 <?php
 
 /**
- * Register all actions and filters for the plugin
+ * Register all actions and filters for Geneis Super Customizer
  *
  * @link       http://supercustomizer.com
  * @since      1.0.0
- *
- * @package    Geneis_Super_Customizer
- * @subpackage Geneis_Super_Customizer/includes
- */
-
-/**
- * Register all actions and filters for the plugin.
- *
- * Maintain a list of all hooks that are registered throughout
- * the plugin, and register them with the WordPress API. Call the
- * run function to execute the list of actions and filters.
  *
  * @package    Geneis_Super_Customizer
  * @subpackage Geneis_Super_Customizer/includes

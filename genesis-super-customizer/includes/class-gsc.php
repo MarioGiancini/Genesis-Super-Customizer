@@ -8,21 +8,6 @@
 *
 * @link       http://supercustomizer.com
 * @since      1.0.0
-*
-* @package    Geneis_Super_Customizer
-* @subpackage Geneis_Super_Customizer/includes
-*/
-
-/**
-* The core plugin class.
-*
-* Define internationalization, dashboard-specific hooks, and
-* public-facing site hooks.
-*
-* Also maintains the unique identifier of this plugin as well as the current
-* version of the plugin.
-*
-* @since      1.0.0
 * @package    Geneis_Super_Customizer
 * @subpackage Geneis_Super_Customizer/includes
 * @author     Mario Giancini

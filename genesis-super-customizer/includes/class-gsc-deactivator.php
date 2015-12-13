@@ -8,16 +8,6 @@
  *
  * @package    Geneis_Super_Customizer
  * @subpackage Geneis_Super_Customizer/includes
- */
-
-/**
- * Fired during plugin deactivation.
- *
- * This class defines all code necessary to run during the plugin's deactivation.
- *
- * @since      1.0.0
- * @package    Geneis_Super_Customizer
- * @subpackage Geneis_Super_Customizer/includes
  * @author     Mario Giancini <mario.giancini@gmail.com>
  */
 class GSC_Deactivator {

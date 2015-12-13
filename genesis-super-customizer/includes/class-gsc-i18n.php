@@ -11,17 +11,6 @@
  *
  * @package    Geneis_Super_Customizer
  * @subpackage Geneis_Super_Customizer/includes
- */
-
-/**
- * Define the internationalization functionality.
- *
- * Loads and defines the internationalization files for this plugin
- * so that it is ready for translation.
- *
- * @since      1.0.0
- * @package    Geneis_Super_Customizer
- * @subpackage Geneis_Super_Customizer/includes
  * @author     Mario Giancini <mario.giancini@gmail.com>
  */
 class GSC_i18n {
