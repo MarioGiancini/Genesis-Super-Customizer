@@ -22,7 +22,7 @@ class GSC_Colors extends GSC_Base {
     $this->mod_settings = array(
       'theme_main_color' => array(
         'css'         => array( 'a, .site-title a, .genesis-nav-menu a:hover, .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a, .genesis-nav-menu .current-menu-item > a, .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .genesis-nav-menu .sub-menu .current-menu-item > a:hover, .genesis-nav-menu .sub-menu .current-menu-item > a:focus, .entry-title a:hover, .theme-color', 'color', '', '', true, array(
-          'siblings' => array( '.theme-bg' => 'background-color', '.enews-widget input[type="submit"], button:hover, button:focus, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"]' => 'background-color', '.archive-pagination li a:hover, .archive-pagination .active a' => 'background-color' ) ) ),
+          'siblings' => array( '.theme-bg' => 'background-color', '.enews-widget input[type="submit"], button:hover, button:focus, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .button:focus, input:focus[type="button"], input:focus[type="reset"], input:focus[type="submit"]' => 'background-color', '.archive-pagination li a:hover, .archive-pagination li a:focus, .archive-pagination .active a' => 'background-color' ) ) ),
         'priority'    => 10,
         'type'        => 'color',
         'default'     => '#e5554e',
