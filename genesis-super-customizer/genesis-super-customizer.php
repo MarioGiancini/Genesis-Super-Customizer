@@ -8,7 +8,7 @@
  * Plugin Name:       Genesis Super Customizer
  * Plugin URI:        http://supercustomizer.com/
  * Description:       Genesis Super Customizer is <strong>the best way</strong> to customize the design of the <a href="http://studiopress.com">Genesis Theme</a>. It adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, and much more, all through native Wordpress customizer.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            Mario Giancini
  * Author URI:        http://mariogiancini.com/
  * License:           GPL-2.0+
