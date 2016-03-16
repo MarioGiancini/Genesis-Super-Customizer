@@ -98,8 +98,14 @@ Detailed documentation is coming soon.
 == Changelog ==
 
 = 1.0.7 - March 16, 2016 =
-* Fixed .button class links focus state colors to adopt theme color for buttons and menu links.
+* Fixed button class links focus state colors to adopt theme color for buttons and menu links.
 * Fixed pagination link focus state colors to adopt theme color for buttons and menu links.
+* Fixed misspelled variables.
+* Color Style updates.
+* Comment clean up.
+* Only calls in fixed header scripts when needed.
+* Deactivates within the appropriate hook.
+* Added active callback to panels, removed active callback filters and replace with functions.
 
 = 1.0.6 - December 5, 2015 =
 * Fixed focus state colors to adopt theme color for buttons and menu links.
