@@ -183,6 +183,7 @@ class Geneis_Super_Customizer {
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
     $this->loader->add_action( 'customize_register', $plugin_admin, 'update_existing_mods', 15 );
 
+    // Only need to register defaults once. Do it here instead of GSC_Base constructor
     $this->loader->add_action( 'init', 'GSC_Base', 'gsc_register_defaults' );
 
     $this->loader->add_filter( 'genesis_footer_output', $plugin_admin, 'footer_options_credits_text', 10 );

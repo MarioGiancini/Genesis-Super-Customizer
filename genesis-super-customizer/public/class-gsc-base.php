@@ -190,13 +190,24 @@ abstract class GSC_Base {
   }
 
   /**
-  * Register desfault settings option.
+  * Register default settings option.
   *
   * @since    1.0.0
   */
   static public function gsc_register_defaults() {
 
     add_option( self::$default_settings_field, self::$default_settings );
+
+  }
+
+  /**
+   * Reset default settings option from reset button in Customizer
+   *
+   * @since    1.1.0
+   */
+  static public function gsc_reset_defaults() {
+
+    update_option( self::$default_settings_field, self::$default_settings );
 
   }
 
