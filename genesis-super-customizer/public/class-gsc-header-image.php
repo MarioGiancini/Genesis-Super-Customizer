@@ -34,7 +34,7 @@ class GSC_Header_Image extends GSC_Base {
         'css'         => array( '.title-area', 'width', '', 'px' ),
         'priority'    => 10,
         'type'        => 'range',
-        'default'     => 360,
+        'default'     => 320,
         'input_attrs' => array(
           'min'   => 100,
           'max'   => $this->logo_width_max,
