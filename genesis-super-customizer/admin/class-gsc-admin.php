@@ -3,11 +3,11 @@
 /**
  * Dashboard-specific functionality.
  *
- * @link       http://supercustomizer.com
- * @since      1.0.0
+ * @link		http://supercustomizer.com
+ * @since		1.0.0
  *
- * @package    Geneis_Super_Customizer
- * @subpackage Geneis_Super_Customizer/admin
+ * @package		Geneis_Super_Customizer
+ * @subpackage	Geneis_Super_Customizer/admin
  */
 
 /**
@@ -16,27 +16,27 @@
  * Defines the plugin name, version, and hooks for enqueuing
  * the dashboard and admin specific stylesheet, JavaScript, and other functions.
  *
- * @package    Geneis_Super_Customizer
- * @subpackage Geneis_Super_Customizer/admin
- * @author     Mario Giancini <mario.giancini@gmail.com>
+ * @package    	Geneis_Super_Customizer
+ * @subpackage 	Geneis_Super_Customizer/admin
+ * @author     	Mario Giancini <mario.giancini@gmail.com>
  */
 class GSC_Admin {
 
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @since	1.0.0
+	 * @access	private
+	 * @var		string		$plugin_name	The ID of this plugin.
 	 */
 	private $plugin_name;
 
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @since	1.0.0
+	 * @access	private
+	 * @var		string		$version		The current version of this plugin.
 	 */
 	private $version;
 
@@ -44,8 +44,8 @@ class GSC_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @var      string    $plugin_name The name of this plugin.
-	 * @var      string    $version    	The version of this plugin.
+	 * @var      string		$plugin_name 	The name of this plugin.
+	 * @var      string		$version    	The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -57,7 +57,7 @@ class GSC_Admin {
 	/**
 	 * Register the stylesheets for the Dashboard.
 	 *
-	 * @since    1.0.0
+	 * @since	1.0.0
 	 */
 	public function enqueue_styles() {
 
@@ -68,7 +68,7 @@ class GSC_Admin {
 	/**
 	 * Register the JavaScript for admin.
 	 *
-	 * @since    1.0.0
+	 * @since	1.0.0
 	 */
 	public function enqueue_scripts() {
 
@@ -77,11 +77,13 @@ class GSC_Admin {
 	}
 
 	/**
-	* Customize the footer credits text
-	*
-	* @since    1.0.0
-	* @var      string    $creds      	Footer credits text from customizer.
-	*/
+	/**
+	 * Customize the footer credits text
+	 *
+	 * @since 	1.0.0
+	 * @var   	string $creds	Footer credits text from customizer.
+	 * @return 	mixed|string
+	 */
 	public function footer_options_credits_text( $creds ) {
 
 		$settings_field = GSC_Base::$default_settings_field;
@@ -94,8 +96,9 @@ class GSC_Admin {
 	/**
 	 * Add customizer export functionality to genesis
 	 *
-	 * @since    1.0.0
-	 * @var      array    $options     	Array of genesis export options.
+	 * @since	1.0.0
+	 * @var		array $options	Array of genesis export options.
+	 * @return	array
 	 */
 	public function gsc_export_settings_field( $options ) {
 
@@ -111,7 +114,8 @@ class GSC_Admin {
 	/**
 	 * Updated existing mod and section settings in the Customizer.
 	 *
-	 * @since    1.0.0
+	 * @since   1.0.0
+	 * @param 	$wp_customize
 	 */
 	public function update_existing_mods( $wp_customize ) {
 

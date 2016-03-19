@@ -49,7 +49,6 @@ function add_customize_range_control( $wp_customize ) {
               for="<?php echo $range_id; ?>">
               <?php echo $this->value(); ?> </output> <?php echo $this->postfix; ?>
             </span>
-          </span>
         </label>
 
         <?php
