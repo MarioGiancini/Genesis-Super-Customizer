@@ -3,8 +3,8 @@ Contributors: Mario Giancini
 Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: 1.0.7
+Tested up to: 4.4.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,10 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.1.0 - March 16, 2016 =
+* Added reset button to Customizer actions (no more uploading a file to restore defaults!)
+* Code and comment clean up
 
 = 1.0.7 - March 16, 2016 =
 * Fixed button class links focus state colors to adopt theme color for buttons and menu links.
