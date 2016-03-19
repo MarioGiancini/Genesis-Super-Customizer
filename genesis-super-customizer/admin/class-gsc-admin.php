@@ -77,6 +77,23 @@ class GSC_Admin {
 	}
 
 	/**
+	 * Register the JavaScript for Customizer reset button.
+	 *
+	 * @since	1.1.0
+     */
+	public function customize_controls_scripts() {
+
+		wp_enqueue_script( $this->plugin_name . '-reset', plugin_dir_url(  __FILE__ ) . 'js/gsc-reset.js', array( 'jquery' ), $this->version, false );
+
+		wp_localize_script( $this->plugin_name, '_SuperCustomizerReset', array(
+			'reset'   => __( 'Reset', $this->plugin_name ),
+			'confirm' => __( "Attention! This will remove all customizations made via the Customizer to this theme. Super Customizer options will reset to their default values.\n\nThis action is irreversible! Be sure to export your settings first!", $this->plugin_name ),
+			'nonce'   => array(
+				'reset' => wp_create_nonce( $this->plugin_name ),
+			)
+		) );
+	}
+
 	/**
 	 * Customize the footer credits text
 	 *
@@ -133,6 +150,37 @@ class GSC_Admin {
 		// $wp_customize->get_setting( 'blogdescription' )->transport='postMessage';
 		// $wp_customize->get_setting( 'header_textcolor' )->transport='postMessage';
 		// $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+
+	}
+
+	/**
+	 * Ajax for customizer reset button
+	 *
+	 * @since   1.1.0
+     */
+	public function ajax_customizer_reset() {
+
+		if ( ! check_ajax_referer( $this->plugin_name, 'nonce', false ) ) {
+			wp_send_json_error( 'invalid_nonce' );
+		}
+
+		$this->reset_customizer();
+
+		wp_send_json_success();
+	}
+
+	/**
+	 * Reset all theme modifications and GSC options.
+	 *
+	 * @since   1.1.0
+     */
+	public function reset_customizer() {
+
+		// remove theme_mod settings registered in customizer
+		remove_theme_mods();
+
+		// reset options with defaults
+		update_option( GSC_Base::$default_settings_field, GSC_Base::$default_settings );
 
 	}
 

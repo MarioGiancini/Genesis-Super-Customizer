@@ -181,6 +181,8 @@ class Geneis_Super_Customizer {
 
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+    $this->loader->add_action( 'wp_ajax_customizer_reset',  $plugin_admin, 'ajax_customizer_reset' );
+    $this->loader->add_action( 'customize_controls_print_scripts', $plugin_admin, 'customize_controls_scripts' );
     $this->loader->add_action( 'customize_register', $plugin_admin, 'update_existing_mods', 15 );
 
     // Only need to register defaults once. Do it here instead of GSC_Base constructor
