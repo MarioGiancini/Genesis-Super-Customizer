@@ -20,7 +20,9 @@ IMPORTANT DISCLAIMER: This plugin is designed to work with the Genesis Framework
 
 There's over 100 options to customize and tinker with, but you can easily change the look and feel of your Genesis theme with just a few options.
 
-NEW: Shortcodes are now included for the theme colors chosen with the customizer:
+NEW: Reset button is now available! Restores the default settings with a single click (after confirmation).
+
+Shortcodes are now included for the theme colors chosen with the customizer:
 
 * [themecolor] - Add the main theme color to text
 * [themebg] - Add the main theme color to the background
@@ -70,8 +72,7 @@ Just like importing a template, navigate to the Genesis > Import/Export menu. Ch
 
 = How do I reset the genesis super customizer options? =
 
-In the current version, you need to upload the default settings .json file. You can find that template at [http://supercustomizer.com/downloads/genesis-default-settings/](http://supercustomizer.com/downloads/genesis-default-settings/ "Genesis Super Customizer Default Settings").
-Import the same as you would any other template (instructions above). There are future plans for a simple reset button.
+In previous versions, you needed to upload the default settings via a .json file, but not anymore. There's a simple reset button at the top of the Customizer, right next to the save button.
 
 = Does it work with premium Genesis child themes from StudioPress? =
 
