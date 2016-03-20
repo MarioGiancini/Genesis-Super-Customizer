@@ -121,7 +121,6 @@ class GSC_Header extends GSC_Base {
         'priority'    => 10,
         'type'        => 'range',
         'default'     => 95,
-        'option'      => true,
         'label'       => 'Shrink Header Opacity',
         'description' => 'Min value is 80%. Requires fixed header.',
         'input_attrs' => array(

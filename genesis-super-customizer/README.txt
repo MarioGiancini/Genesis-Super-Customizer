@@ -97,7 +97,7 @@ Detailed documentation is coming soon.
 
 == Changelog ==
 
-= 1.1.0 - March 16, 2016 =
+= 1.1.0 - March 19, 2016 =
 * Added reset button to Customizer actions (no more uploading a file to restore defaults!)
 * Code and comment clean up
 
