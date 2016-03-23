@@ -52,9 +52,9 @@ class GSC_Header extends GSC_Base {
       ),
       'header_padding' => array(
         'css'         => array( '.site-header .wrap', 'padding-top padding-bottom', '', 'px', true, array(
-          // moved here from header_size to be outside of media query
+          // default attributes moved here from header_size to be outside of media query
           'affects'         => array( '.site-header' ),
-          'affects_values'  => array( '.site-header' => 'min-height: initial;' )
+          'affects_values'  => array( '.site-header' => 'min-height: initial; position: relative; z-index: 1;' )
         ) ),
         'priority'    => 10,
         'type'        => 'range',
