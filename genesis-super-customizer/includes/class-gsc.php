@@ -55,7 +55,7 @@ class Geneis_Super_Customizer {
   public function __construct() {
 
     $this->plugin_name = 'genesis-super-customizer';
-    $this->version = '1.1.0';
+    $this->version = '1.2.0';
 
     $this->load_dependencies();
     $this->set_locale();
@@ -87,6 +87,11 @@ class Geneis_Super_Customizer {
     * Helper functions outside of classes.
     */
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/gsc-helpers.php';
+
+    /**
+    * Partials for admin views. Uncomment when ready.
+    */
+    //require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/gsc-admin-display.php';
 
     /**
     * Shortcodes to enhance design.
@@ -183,6 +188,8 @@ class Geneis_Super_Customizer {
 
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+    // Admin licenses page
+    // $this->loader->add_action( 'admin_menu', $plugin_admin, 'create_licenses_subpage' );
     $this->loader->add_action( 'wp_ajax_customizer_reset',  $plugin_admin, 'ajax_customizer_reset' );
     $this->loader->add_action( 'customize_controls_print_scripts', $plugin_admin, 'customize_controls_scripts' );
     $this->loader->add_action( 'customize_register', $plugin_admin, 'update_existing_mods', 15 );
@@ -215,6 +222,10 @@ class Geneis_Super_Customizer {
     $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
     $this->loader->add_action( 'after_setup_theme', $plugin_public, 'set_custom_header', 15 );
     $this->loader->add_action( 'after_setup_theme', $plugin_public, 'set_custom_background', 15 );
+
+    // Filter public facings script tags
+    $this->loader->add_filter('script_loader_tag', $plugin_public, 'add_async_attribute', 10, 2);
+    $this->loader->add_filter('script_loader_tag', $plugin_public, 'add_defer_attribute', 10, 2);
 
   }
 

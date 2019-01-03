@@ -3,8 +3,8 @@ Contributors: Mario Giancini
 Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
-Tested up to: 4.4.2
-Stable tag: 1.1.0
+Tested up to: 5.0.2
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ The easiest way to customize the design of the Genesis theme, right from the Wor
 Genesis Super Customizer adds options to customize colors, create a fixed header that shrinks on scroll, upload logos, edit footer credits, and much more, all through the native Wordpress Customizer interface.
 It's the easiest way to customize the design of the Genesis theme or your custom Genesis child theme.
 
-IMPORTANT DISCLAIMER: This plugin is designed to work with the Genesis Framework and the Genesis Sample Child Theme only, not premium Genesis child themes like Author Pro, Parallax Pro, etc. It duplicates and overrides the stylesheet for the Genesis theme or Sample Child Theme (or your custom theme based off of the Sample Child Theme) as a starting point for design. It will override your current styles so it's best to try it out on a staging site first, or start off by developing your site with just Genesis and GSC.
+IMPORTANT DISCLAIMER: This plugin is designed to work with the Genesis Framework and the Genesis Sample Child Theme only, not all premium Genesis child themes like Author Pro, Parallax Pro, etc. It no longer duplicates and overrides all the stylesheet from the Genesis theme or Sample Child Theme, but not all settings will work with all premium child themes.
 
 There's over 100 options to customize and tinker with, but you can easily change the look and feel of your Genesis theme with just a few options.
 
@@ -79,8 +79,7 @@ In previous versions, you needed to upload the default settings via a .json file
 In short, no. Genesis Super Customizer isn't tested with premium child themes such as Parallax Pro, Author Pro, etc. It is meant to replace the need to edit your CSS file in your Genesis parent theme or custom child theme (like the Sample Child theme).
 It should work fine with just about any custom child theme based off of the Sample Child theme, but options on premium themes will probably not work correctly. There are future plans to incorporate add-ons for premium child themes.
 
-UPDATE: Enterprise Pro seems works fine since the base styles are very similar, with one known caveat. The .site-inner section floats to the left. This is because the .wrap max-width also effects the .site-inner width (meant to replace the CSS from the Genesis parent theme).
-To fix it, simply add this CSS line to your wp_head() scripts (uses <style> tags) in your Genesis settings, or to your styles.css file:
+UPDATE: This is still not completely tested, but now that Genesis Super Customizer adds no styles by default, you should be able to customizer specific sections of the theme without breaking it.
 
 .site-inner { max-width: initial !important; }
 
@@ -97,6 +96,19 @@ Detailed documentation is coming soon.
 
 
 == Changelog ==
+
+= 1.2.0 - March 19, 2016 =
+* Made all default options empty so only the styles set will be applied. Clicking reset button will set all options to empty as well.
+* Added settings panel with global setting to use Options (default) or Theme Mods.
+* When Theme Mods are used instead of Options, Live Previews are enabled for most styles (most colors, basic styles and some built in settings).
+* Improved range sliders (thanks to [Anthony Hortin]( http://maddisondesigns.com ), derived from his development) with reset and direct number input.
+* Defers and loads async any public scripts to help with page load speed.
+* Moved custom fixed header styles to inline instead of adding another stylesheet. One less resource to load. (Hurray for fast page loads!)
+* Moved Header Settings Section to new Header panel, and separated older Header Settings options in it's own section.
+* Fixed spacing on default footer credits.
+* Fixed known errors with array keys undefined.
+* Misc error fixes.
+* Code and comment clean up
 
 = 1.1.0 - March 19, 2016 =
 * Added reset button to Customizer actions (no more uploading a file to restore defaults!)
@@ -163,16 +175,12 @@ Detailed documentation is coming soon.
 
 Here are some planned updates for the near future
 
-* Instant Preview
 * Filters For Developers To Add Their Own Settings
 * Additional Menu customizations for submenus
 * Additional Content customizations for entry meta, blockquotes, and more.
 * Genesis Premium Child Theme compatibility
 * Compatibility with other Featured Genesis plugins
 * Change Featured Image And Title Order
-* Shortcodes for adding theme colors throughout your site
-* Favicon Upload
-* Reset Button (instead of uploading default settings)
 * WooCommerce compatibility
 * More extensions for other popular plugins
 * Requests by you! Send requests on Twitter @SuperCustomizer.
