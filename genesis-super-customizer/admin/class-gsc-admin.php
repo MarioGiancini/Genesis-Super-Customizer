@@ -1,21 +1,12 @@
 <?php
 
 /**
- * Dashboard-specific functionality.
- *
- * @link		http://supercustomizer.com
- * @since		1.0.0
- *
- * @package		Geneis_Super_Customizer
- * @subpackage	Geneis_Super_Customizer/admin
- */
-
-/**
  * The dashboard and admin specific functionality of the plugin.
  *
  * Defines the plugin name, version, and hooks for enqueuing
  * the dashboard and admin specific stylesheet, JavaScript, and other functions.
  *
+ * @since		1.0.0
  * @package    	Geneis_Super_Customizer
  * @subpackage 	Geneis_Super_Customizer/admin
  * @author     	Mario Giancini <mario.giancini@gmail.com>
@@ -77,21 +68,40 @@ class GSC_Admin {
 	}
 
 	/**
-	 * Register the JavaScript for Customizer reset button.
+	 * Register the JavaScript for Customizer controls.
 	 *
 	 * @since	1.1.0
      */
 	public function customize_controls_scripts() {
 
-		wp_enqueue_script( $this->plugin_name . '-reset', plugin_dir_url(  __FILE__ ) . 'js/gsc-reset.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_style( $this->plugin_name . '-controls', plugin_dir_url( __FILE__ ) . 'css/gsc-controls.css', array(), $this->version, 'all' );
 
-		wp_localize_script( $this->plugin_name, '_SuperCustomizerReset', array(
-			'reset'   => __( 'Reset', $this->plugin_name ),
-			'confirm' => __( "Attention! This will remove all customizations made via the Customizer to this theme. Super Customizer options will reset to their default values.\n\nThis action is irreversible! Be sure to export your settings first!", $this->plugin_name ),
+		wp_enqueue_script( $this->plugin_name . '-controls', plugin_dir_url(  __FILE__ ) . 'js/gsc-controls.js', array( 'jquery' ), $this->version, false );
+
+		wp_localize_script( $this->plugin_name . '-controls', '_SuperCustomizerReset', array(
+			'reset'   => __( 'Reset', 'genesis' ),
+			'confirm' => __( "Attention! This will remove all customizations made via the Customizer to this theme. Super Customizer options will reset to their default values.\n\nThis action is irreversible! Be sure to export your settings first!", 'genesis' ),
 			'nonce'   => array(
 				'reset' => wp_create_nonce( $this->plugin_name ),
 			)
 		) );
+	}
+
+	public function customizer_preview() {
+
+		wp_enqueue_script(
+			$this->plugin_name . '-previews',
+			plugin_dir_url(  __FILE__ ) . 'js/gsc-previews.js',
+			array( 'jquery' ),
+			$this->version,
+			true
+		);
+
+		wp_localize_script(
+			$this->plugin_name . '-previews',
+			'mod_settings',
+			GSC_Base::$preview_settings
+		);
 	}
 
 	/**
@@ -120,11 +130,22 @@ class GSC_Admin {
 	public function gsc_export_settings_field( $options ) {
 
 		$options['customizer'] = array(
-			'label' => __( 'Customizer Settings', 'genesis-sc' ),
+			'label' => __( 'Customizer Settings', 'genesis' ),
 			'settings-field' => 'genesis-customizer-settings',
 		);
 
 		return $options;
+
+	}
+
+	/**
+	 * Add Genesis Super Customizer Licenses subpage to Genesis menu page
+	 *
+	 * @since   1.2.0
+     */
+	public function create_licenses_subpage() {
+
+		add_submenu_page( 'genesis', 'Super Customizer Licenses', 'Licenses', 'manage_options', 'gsc-licenses', 'gsc_create_license_subpage' );
 
 	}
 
@@ -139,17 +160,20 @@ class GSC_Admin {
 		$wp_customize->get_control( 'blogdescription' )->label = 'Tagline - Description';
 		$wp_customize->get_control( 'display_header_text' )->label = 'Display Header Text On Image.';
 		$wp_customize->get_control( 'display_header_text' )->description = 'Applies if you have are using a header image.';
+		$wp_customize->get_control( 'display_header_text' )->section = 'header_old';
 		$wp_customize->get_section( 'colors' )->title = 'Theme Colors';
 		$wp_customize->get_section( 'colors' )->description = 'Set your theme colors here. Links and titles will automatically be colored to match the main theme colors, or you can adjust individual settings in other sections.';
-		
+		$wp_customize->get_control( 'header_image' )->section = 'header_old';
+		$wp_customize->remove_section( 'header_image' );
+
 		$wp_customize->remove_control('background_color');
 		$wp_customize->remove_control('header_textcolor');
+		$wp_customize->remove_control('genesis_sample_link_color');
+		$wp_customize->remove_control('genesis_sample_accent_color');
 
-		//* Change these when instant preview is added
-		// $wp_customize->get_setting( 'blogname' )->transport='postMessage';
-		// $wp_customize->get_setting( 'blogdescription' )->transport='postMessage';
-		// $wp_customize->get_setting( 'header_textcolor' )->transport='postMessage';
-		// $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
+		//* Update built in customizer settings to Live Preview
+		$wp_customize->get_setting( 'blogname' )->transport='postMessage';
+		$wp_customize->get_setting( 'blogdescription' )->transport='postMessage';
 
 	}
 

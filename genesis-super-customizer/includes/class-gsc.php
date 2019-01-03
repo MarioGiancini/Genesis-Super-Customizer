@@ -188,6 +188,9 @@ class Geneis_Super_Customizer {
     // Only need to register defaults once. Do it here instead of GSC_Base constructor
     $this->loader->add_action( 'init', 'GSC_Base', 'gsc_register_defaults' );
 
+    // Load script for live previews
+    $this->loader->add_action( 'customize_preview_init', $plugin_admin, 'customizer_preview' );
+
     $this->loader->add_filter( 'genesis_footer_output', $plugin_admin, 'footer_options_credits_text', 10 );
     $this->loader->add_filter( 'genesis_export_options', $plugin_admin, 'gsc_export_settings_field' );
 
@@ -205,7 +208,8 @@ class Geneis_Super_Customizer {
 
     $plugin_public = new GSC_Public( $this->get_plugin_name(), $this->get_version() );
 
-    $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+    $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
+    $this->loader->add_action( 'wp_head', $plugin_public, 'inline_styles');
     $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
     $this->loader->add_action( 'after_setup_theme', $plugin_public, 'set_custom_header', 15 );
     $this->loader->add_action( 'after_setup_theme', $plugin_public, 'set_custom_background', 15 );
