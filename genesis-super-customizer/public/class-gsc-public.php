@@ -20,7 +20,7 @@ class GSC_Public {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @var      string     $plugin_name
 	 */
 	private $plugin_name;
 
@@ -29,9 +29,17 @@ class GSC_Public {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string     $version
 	 */
 	private $version;
+
+	/**
+	 * Scripts to enqueue and defer.
+	 *
+	 * @since   1.2.0
+	 * @var     array      $scripts
+	 */
+	private $scripts = array('gsc-fixed-header');
 
 	/**
 	 * Initialize the class and set its properties.
@@ -106,12 +114,12 @@ class GSC_Public {
 		}
 
 		//* Default values
-		$logo_width 	= 360;
+		$logo_width 	= 320;
 		$logo_height 	= 80;
 		$flex_width 	= false;
 		$flex_height 	= false;
 
-		//* If this Genesis function has been declaired first, then assign customizer values. Sometimes showed an error.
+		//* If this Genesis function has been declared first, then assign customizer values. Sometimes showed an error.
 		if( function_exists( 'genesis_get_option' ) ) {
 			$logo_width 	= genesis_get_option( 'logo_width', 'genesis-customizer-settings' );
 			$logo_height 	= genesis_get_option( 'logo_height', 'genesis-customizer-settings' );
@@ -160,4 +168,49 @@ class GSC_Public {
 
 	}
 
+	/**
+	 * Add async attribute to scripts for optimized page load.
+	 * This code is based in Mathew Horne blog post.
+	 *
+	 * @see https://matthewhorne.me/defer-async-wordpress-scripts/
+	 * @since 1.2.0
+	 *
+	 * @param string $tag
+	 * @param string $handle
+	 *
+	 * @return mixed
+	 */
+	public function add_async_attribute( $tag, $handle ) {
+		// check if this script is in the array
+		if ( in_array( $handle, $this->scripts ) ) {
+			// return with async
+			return str_replace( ' src', ' async="async" src', $tag );
+		} else {
+			// return without async
+			return $tag;
+		}
+	}
+
+	/**
+	 * Add defer attribute to scripts for optimized page load.
+	 * This code is based in Mathew Horne blog post.
+	 *
+	 * @see https://matthewhorne.me/defer-async-wordpress-scripts/
+	 * @since 1.2.0
+	 *
+	 * @param string $tag
+	 * @param string $handle
+	 *
+	 * @return mixed
+	 */
+	public function add_defer_attribute( $tag, $handle ) {
+		// check if this script is in the array
+		if ( in_array( $handle, $this->scripts ) ) {
+			// return with defer
+			return str_replace( ' src', ' defer="defer" src', $tag );
+		} else {
+			// return without async
+			return $tag;
+		}
+	}
 }

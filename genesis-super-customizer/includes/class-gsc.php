@@ -151,6 +151,7 @@ class Geneis_Super_Customizer {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-title-tagline.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-colors.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-header.php';
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-header-old.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-header-image.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-nav.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-content.php';
@@ -162,6 +163,7 @@ class Geneis_Super_Customizer {
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-footer.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-footer-credits.php';
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-breadcrumbs.php';
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-settings.php';
 
     //* Register Media Queries Last
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-gsc-media-queries.php';
