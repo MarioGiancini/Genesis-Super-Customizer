@@ -55,7 +55,7 @@ class Geneis_Super_Customizer {
   public function __construct() {
 
     $this->plugin_name = 'genesis-super-customizer';
-    $this->version = '1.2.0';
+    $this->version = '1.2.1';
 
     $this->load_dependencies();
     $this->set_locale();

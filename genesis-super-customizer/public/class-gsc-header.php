@@ -40,10 +40,6 @@ class GSC_Header extends GSC_Base {
 			$this->header_size_min = $this->get_field_value( 'logo_height' );
 		}
 
-		$header_size     = $this->get_field_value( 'header_size' ) ? $this->get_field_value( 'header_size' ) : 0;
-		$shrink_size     = $this->get_field_value( 'shrink_size' ) ? $this->get_field_value( 'shrink_size' ) : 0;
-		$title_font_size = $this->get_field_value( 'title_font_size' ) ? $this->get_field_value( 'title_font_size' ) : 0;
-
 		$this->mod_settings = array(
 			'header_border_width'       => array(
 				'css'         => array( '.site-header', 'border-bottom', '', 'px' ),

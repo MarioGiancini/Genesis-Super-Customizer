@@ -4,7 +4,7 @@ Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
 Tested up to: 5.0.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,7 @@ Please note this plugin requires the Genesis theme (a premium WordPress theme) t
 
 == Frequently Asked Questions ==
 
-= How do I install a customizer template? =
+= How do I install/import a customizer template? =
 
 From your WordPress admin navigate to the Genesis > Import/Export menu. Click "Choose File"
 and location your .json customizer template file. Click "Upload File and Import". You should see
@@ -81,8 +81,6 @@ It should work fine with just about any custom child theme based off of the Samp
 
 UPDATE: This is still not completely tested, but now that Genesis Super Customizer adds no styles by default, you should be able to customizer specific sections of the theme without breaking it.
 
-.site-inner { max-width: initial !important; }
-
 
 == Screenshots ==
 
@@ -94,10 +92,17 @@ Please follow on Twitter [@SuperCustomizer]( http:/twitter.com/SuperCustomizer )
 
 Detailed documentation is coming soon.
 
+You can also submit questions and suggestions at [http://supercustomizer.com/contact/]( http://supercustomizer.com/contact/ )
+
 
 == Changelog ==
 
-= 1.2.0 - March 19, 2016 =
+= 1.2.1 - January 2, 2019 =
+* Make sure the line height of the header menu items match the logo when using the fixed shrink header option.
+* Removed genesis_sample_link_color and genesis_sample_accent_color from newer Genesis Sample child theme.
+* Upgrade notices and readme updates.
+
+= 1.2.0 - December 31, 2018 =
 * Made all default options empty so only the styles set will be applied. Clicking reset button will set all options to empty as well.
 * Added settings panel with global setting to use Options (default) or Theme Mods.
 * When Theme Mods are used instead of Options, Live Previews are enabled for most styles (most colors, basic styles and some built in settings).
@@ -170,6 +175,8 @@ Detailed documentation is coming soon.
 
 == Upgrade Notice ==
 
+= 1.2.0 =
+Since there are many updates in this version it is recommend that you export your Genesis Super Customizer settings before upgrading.
 
 == Future Updates ==
 

@@ -34,6 +34,7 @@ class GSC_Header_Old extends GSC_Base {
 			$this->header_size_min = $this->get_field_value( 'logo_height' );
 		}
 
+		$logo_height = $this->get_field_value( 'logo_height' ) ? $this->get_field_value( 'logo_height' ) : 0;
 		$nav_link_line_height = $this->get_field_value( 'nav_item_line_height' ) ? $this->get_field_value( 'nav_item_line_height' ) : 15;
 		$header_size     = $this->get_field_value( 'header_size' ) ? $this->get_field_value( 'header_size' ) : 0;
 		$shrink_size     = $this->get_field_value( 'shrink_size' ) ? $this->get_field_value( 'shrink_size' ) : 0;
@@ -150,7 +151,7 @@ class GSC_Header_Old extends GSC_Base {
 							'.shrink .wrap' => 'padding-top: 0; padding-bottom: 0;',
 							'.shrink .title-area' => 'padding-top: 0; padding-bottom: 0;',
 							'.shrink .nav-primary' => 'padding-top: 0; padding-bottom: 0;',
-							'.site-header .genesis-nav-menu > li > a' => 'line-height: ' . $nav_link_line_height . 'px;',
+							'.site-header .genesis-nav-menu > li > a' => 'line-height: ' . ($logo_height ? $logo_height : $nav_link_line_height) . 'px;',
 							'.shrink .genesis-nav-menu > li > a' => 'line-height: ' . $shrink_size . 'px; padding-top: 0; padding-bottom: 0;'
 						)
 					)

@@ -65,7 +65,8 @@ class GSC_Public {
 	}
 
 	public function inline_styles() {
-		if( genesis_get_option( 'fixed_header', 'genesis-customizer-settings' ) ) { ?>
+
+		if( function_exists( 'genesis_get_option' ) && genesis_get_option( 'fixed_header', 'genesis-customizer-settings' ) ) { ?>
 
 			<style type="text/css" id="gsc-base">
 				.site-header,
