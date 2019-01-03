@@ -53,9 +53,31 @@ class GSC_Public {
 	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
+		// Removed and added inline
+	}
 
-		wp_enqueue_style( 'gsc-shrink-header', plugin_dir_url( __FILE__ ) . 'css/gsc-shrink-header.css', array(), $this->version );
+	public function inline_styles() {
+		if( genesis_get_option( 'fixed_header', 'genesis-customizer-settings' ) ) { ?>
 
+			<style type="text/css" id="gsc-base">
+				.site-header,
+				.title-area,
+				.title-area a,
+				.site-header .wrap,
+				.site-header nav,
+				.site-header .genesis-nav-menu a,
+				.site-title,
+				.site-description {
+					-webkit-transition: all 0.3s ease-in-out;
+					-moz-transition: all 0.3s ease-in-out;
+					-ms-transition: all 0.3s ease-in-out;
+					-o-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+				}
+			</style>
+
+			<?php
+		}
 	}
 
 	/**
@@ -65,9 +87,8 @@ class GSC_Public {
 	 */
 	public function enqueue_scripts() {
 
-		if( genesis_get_option( 'fixed_header', 'genesis-customizer-settings' ) ){
-			wp_enqueue_script( 'gsc-add-bumper', plugin_dir_url( __FILE__ ) . 'js/gsc-add-bumper.js', array( 'jquery' ), $this->version );
-			wp_enqueue_script( 'gsc-shrink-header', plugin_dir_url( __FILE__ ) . 'js/gsc-shrink-header.js', array( 'jquery' ), $this->version );
+		if( genesis_get_option( 'fixed_header', 'genesis-customizer-settings' ) ) {
+			wp_enqueue_script( 'gsc-fixed-header', plugin_dir_url( __FILE__ ) . 'js/gsc-fixed-header.js', array( 'jquery' ), $this->version, true );
 		}
 
 	}
