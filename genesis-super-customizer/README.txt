@@ -4,7 +4,7 @@ Donate link: http://supercustomizer.com/donate
 Tags: customizer, genesis, options, supercustomizer, design
 Requires at least: 3.8
 Tested up to: 5.0.2
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,14 @@ You can also submit questions and suggestions at [http://supercustomizer.com/con
 
 
 == Changelog ==
+
+= 1.2.2 - January 6, 2019 =
+* Better organize sections and panels.
+* Move new genesis custom logo to header logo section.
+* Add separate Reset and Remove value controls to sliders.
+* Fix GSC global setting for Options or Theme Mods to default properly when not yet set.
+* Add body font setting.
+* Other minor fixes.
 
 = 1.2.1 - January 2, 2019 =
 * Make sure the line height of the header menu items match the logo when using the fixed shrink header option.
