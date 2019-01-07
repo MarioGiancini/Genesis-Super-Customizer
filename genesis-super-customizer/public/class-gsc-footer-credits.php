@@ -12,6 +12,8 @@
 
 class GSC_Footer_Credits extends GSC_Base {
 
+	protected $mod_panel = 'footer';
+
 	protected $new_section = true;
 
 	protected $mod_section = 'footer_credits';
@@ -20,7 +22,7 @@ class GSC_Footer_Credits extends GSC_Base {
 
 	protected $section_desc = 'Customize the text for the footer credits. You can use Genesis short codes.';
 
-	protected $section_priority = 115;
+	protected $section_priority = 20;
 
 	//* Setup mods here to get for output
 	protected function get_mods() {

@@ -12,11 +12,15 @@
 
 class GSC_Header_Image extends GSC_Base {
 
-	protected $settings_field = 'genesis-customizer-settings';
+	protected $mod_panel = 'header';
 
-	protected $new_section = false;
+	protected $new_section = true;
 
-	protected $mod_section = 'header_old';
+	protected $mod_section = 'header_logo';
+
+	protected $section_title = 'Header Logo';
+
+	protected $section_desc = 'Settings for the logo image and styling in the header.';
 
 	//* Placeholders for variable attributes
 	private $logo_width_max = 1200;
@@ -33,21 +37,36 @@ class GSC_Header_Image extends GSC_Base {
 
 		$this->mod_settings = array(
 			'logo_width'            => array(
-				'css'         => array( '.title-area', 'width', '', 'px' ),
+				'css'         => array(
+					'.title-area, .wp-custom-logo .site-container .title-area',
+					'width max-width',
+					'',
+					'px',
+					true,
+					array(
+						'affects'        => array(
+							'.wp-custom-logo .site-header .nav-primary'
+						),
+						'affects_values' => array(
+							'.wp-custom-logo .site-header .nav-primary' => 'padding-top: 0px; padding-bottom: 0px;'
+						)
+					)
+				),
 				'priority'    => 10,
 				'type'        => 'range',
 				'default'     => null,
 				'input_attrs' => array(
-					'min'  => 100,
+					'min'  => 40,
 					'max'  => $this->logo_width_max,
-					'step' => 10,
+					'step' => 5,
 				),
+				'label' => 'Logo / Title Width',
 				'description' => 'If you adjust this you may have to re-upload your logo for the new size. Max since depends on content wrap width.',
 				'option'      => $this->use_option,
 			),
 			'logo_height'           => array(
 				'css'         => array(
-					'.title-area',
+					'.title-area, .wp-custom-logo .site-container .title-area',
 					'height',
 					'',
 					'px',
@@ -74,7 +93,20 @@ class GSC_Header_Image extends GSC_Base {
 					'max'  => 200,
 					'step' => 5,
 				),
+				'label' => 'Logo / Title Height',
 				'description' => 'If you adjust this you may have to re-upload your logo for the new size. Save, close, and reopen customizer to see changes in description above.',
+				'option'      => $this->use_option,
+			),
+			'logo_padding'            => array(
+				'css'         => array( '.title-area, .wp-custom-logo .site-container .title-area', 'padding-top padding-bottom', '', 'px' ),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => null,
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 20,
+				),
+				'description' => 'Adjust the top and bottom padding of the logo ("title-area"). Depending on your child theme you may need to override the padding here to get the logo to sit evenly with header menu.',
 				'option'      => $this->use_option,
 			),
 			'flex_crop'             => array(
@@ -115,8 +147,8 @@ class GSC_Header_Image extends GSC_Base {
 			),
 			'fullwidth_image'       => array(
 				'css'      => array(
-					'.title-area',
-					'width',
+					'.title-area, .wp-custom-logo .title-area',
+					'width max-width',
 					'',
 					'% !important',
 					true,

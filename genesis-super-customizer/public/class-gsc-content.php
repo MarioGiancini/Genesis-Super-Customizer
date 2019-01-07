@@ -135,6 +135,18 @@ class GSC_Content extends GSC_Base {
 				'option'    => $this->use_option,
 				'transport' => 'postMessage',
 			),
+			'body_font_size'            => array(
+				'css'         => array( 'body', 'font-size', '', 'px' ),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => null,
+				'input_attrs' => array(
+					'min' => 12,
+					'max' => 32,
+				),
+				'option'      => $this->use_option,
+				'transport'   => 'postMessage',
+			),
 			'heading_text_font'         => array(
 				'css'         => array( 'h1, h2, h3, h4, h5, h6', 'font-family' ),
 				'priority'    => 10,

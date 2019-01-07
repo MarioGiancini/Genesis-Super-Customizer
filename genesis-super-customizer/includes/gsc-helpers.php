@@ -39,9 +39,12 @@ function add_customize_range_control( $wp_customize ) {
 				?>
 				<div class="slider-custom-control">
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span><input type="number" id="<?php echo esc_attr( $range_id ); ?>" name="<?php echo esc_attr( $range_id ); ?>" value="<?php echo esc_attr( $this->value() ); ?>" class="customize-control-slider-value" <?php $this->link(); ?> />
-					<div class="slider" slider-min-value="<?php echo esc_attr( $this->input_attrs['min'] ); ?>" slider-max-value="<?php echo esc_attr( $this->input_attrs['max'] ); ?>" slider-step-value="<?php echo esc_attr( $step ); ?>"></div><span class="slider-reset dashicons dashicons-image-rotate" slider-reset-value="<?php echo esc_attr( $this->value() ); ?>" title="reset"></span>
+					<div class="slider" slider-min-value="<?php echo esc_attr( $this->input_attrs['min'] ); ?>" slider-max-value="<?php echo esc_attr( $this->input_attrs['max'] ); ?>" slider-step-value="<?php echo esc_attr( $step ); ?>"></div><span class="slider-remove dashicons  dashicons-no" slider-remove-value="" title="Remove"></span><span class="slider-reset dashicons dashicons-image-rotate" slider-reset-value="<?php echo esc_attr( $this->value() ); ?>" title="Reset"></span>
 				</div>
-				<?php
+				<?php if( $this->description ) { ?>
+					<br>
+					<p class="description"><?php echo $this->description; ?></p>
+				<?php }
 			}
 		}
 

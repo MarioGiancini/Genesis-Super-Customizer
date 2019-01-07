@@ -163,13 +163,19 @@ class GSC_Admin {
 		$wp_customize->get_control( 'display_header_text' )->section = 'header_old';
 		$wp_customize->get_section( 'colors' )->title = 'Theme Colors';
 		$wp_customize->get_section( 'colors' )->description = 'Set your theme colors here. Links and titles will automatically be colored to match the main theme colors, or you can adjust individual settings in other sections.';
-		$wp_customize->get_control( 'header_image' )->section = 'header_old';
+		$wp_customize->get_control( 'header_image' )->section = 'header_logo';
 		$wp_customize->remove_section( 'header_image' );
+		$wp_customize->get_section( 'title_tagline' )->panel = 'header';
+		$wp_customize->get_control( 'custom_logo' )->section = 'header_logo';
+		$wp_customize->get_control( 'custom_logo' )->description = 'This custom logo is from newer version og Genesis child themes and will override the Header Image below.';
 
 		$wp_customize->remove_control('background_color');
 		$wp_customize->remove_control('header_textcolor');
 		$wp_customize->remove_control('genesis_sample_link_color');
 		$wp_customize->remove_control('genesis_sample_accent_color');
+
+		//* Remove new Genesis Sample Theme settings
+		$wp_customize->remove_control('genesis_sample_logo_width');
 
 		//* Update built in customizer settings to Live Preview
 		$wp_customize->get_setting( 'blogname' )->transport='postMessage';

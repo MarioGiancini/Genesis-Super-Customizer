@@ -24,7 +24,7 @@ class GSC_Header extends GSC_Base {
 
 	protected $mod_section = 'header_border';
 
-	protected $section_title = 'Border Settings';
+	protected $section_title = 'Header Border';
 
 	protected $section_desc = 'Use these options to customize the look and response of your site header.';
 

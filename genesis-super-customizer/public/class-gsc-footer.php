@@ -12,20 +12,100 @@
 
 class GSC_Footer extends GSC_Base {
 
+	protected $new_panel = true;
+
+	protected $mod_panel = 'footer';
+
+	protected $panel_title = 'Footer';
+
+	protected $panel_desc = 'Settings to customize the look and response of your site footer.';
+
+	protected $panel_priority = 115;
+
 	protected $new_section = true;
 
-	protected $mod_section = 'footer';
+	protected $mod_section = 'footer_layout';
 
-	protected $section_title = 'Footer Settings';
+	protected $section_title = 'Footer Layout';
 
 	protected $section_desc = 'Adjust styles for the footer widgets and footer credits areas.';
 
-	protected $section_priority = 115;
+	protected $section_priority = 10;
 
 	//* Setup mods here to get for output
 	protected function get_mods() {
 
 		$this->mod_settings = array(
+			'footer_border_top_color' => array(
+				'css'       => array(
+					'.site-footer',
+					'border-color',
+					'',
+					'',
+					true,
+					array( 'rgba' => 'footer_border_top_alpha' )
+				),
+				'priority'  => 10,
+				'type'      => 'color',
+				'default'   => null,
+				'option'    => $this->use_option,
+				'transport' => 'postMessage',
+			),
+			'footer_border_top_alpha' => array(
+				'css'         => array(),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => 100,
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 5,
+				),
+				'decimal'     => true,
+				'option'      => $this->use_option,
+			),
+			'footer_border_top_border_style' => array(
+				'css'       => array( '.site-footer', 'border-top-style' ),
+				'priority'  => 10,
+				'type'      => 'select',
+				'default'   => null,
+				'choices'   => $this->border_styles,
+				'option'    => $this->use_option,
+				'transport' => 'postMessage',
+			),
+			'footer_border_top_border_width' => array(
+				'css'         => array( '.site-footer', 'border-top-width', '', 'px' ),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => null,
+				'input_attrs' => array(
+					'min' => 0,
+					'max' => 20,
+				),
+				'option'      => $this->use_option,
+				'transport'   => 'postMessage',
+			),
+			'footer_border_bottom_border_style' => array(
+				'css'       => array( '.site-footer', 'border-bottom-style' ),
+				'priority'  => 10,
+				'type'      => 'select',
+				'default'   => null,
+				'choices'   => $this->border_styles,
+				'option'    => $this->use_option,
+				'transport' => 'postMessage',
+			),
+			'footer_border_bottom_border_width' => array(
+				'css'         => array( '.site-footer', 'border-bottom-width', '', 'px' ),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => null,
+				'input_attrs' => array(
+					'min' => 0,
+					'max' => 20,
+				),
+				'option'      => $this->use_option,
+				'transport'   => 'postMessage',
+			),
 			'footer_list_item_border_color' => array(
 				'css'       => array(
 					'.footer-widgets li',

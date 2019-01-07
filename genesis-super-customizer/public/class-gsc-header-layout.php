@@ -14,13 +14,13 @@ class GSC_Header_Old extends GSC_Base {
 
 	protected $new_section = true;
 
-	protected $mod_section = 'header_old';
+	protected $mod_section = 'header_layout';
 
 	protected $mod_panel = 'header';
 
-	protected $section_title = 'Older Settings';
+	protected $section_title = 'Header Layout';
 
-	protected $section_desc = 'These header settings mainly apply to older versions of Genesis child themes.';
+	protected $section_desc = 'These header layout settings mainly apply to older versions of Genesis child themes.';
 
 	protected $section_priority = 50;
 
@@ -39,6 +39,8 @@ class GSC_Header_Old extends GSC_Base {
 		$header_size     = $this->get_field_value( 'header_size' ) ? $this->get_field_value( 'header_size' ) : 0;
 		$shrink_size     = $this->get_field_value( 'shrink_size' ) ? $this->get_field_value( 'shrink_size' ) : 0;
 		$title_font_size = $this->get_field_value( 'title_font_size' ) ? $this->get_field_value( 'title_font_size' ) : 0;
+		$header_padding_right = $this->get_field_value( 'header_padding_right' ) ? $this->get_field_value( 'header_padding_right' ) : 40;
+		$header_padding_left = $this->get_field_value( 'header_padding_left' ) ? $this->get_field_value( 'header_padding_left' ) : 40;
 
 		$this->mod_settings = array(
 			'header_size'               => array(
@@ -60,12 +62,12 @@ class GSC_Header_Old extends GSC_Base {
 					'max'  => 200,
 					'step' => 5,
 				),
-				'description' => 'Sets the height for the header. Recommened: Logo Height + (Header Padding x 2). Used for fixed header and other settings.',
+				'description' => 'Sets the height for the header. Recommended: Logo Height + (Header Padding x 2). Used for fixed header and other settings.',
 				'option'      => $this->use_option,
 			),
 			'header_padding'            => array(
 				'css'         => array(
-					'.site-header .wrap',
+					'.site-header > .wrap',
 					'padding-top padding-bottom',
 					'',
 					'px',
@@ -87,6 +89,44 @@ class GSC_Header_Old extends GSC_Base {
 				'description' => 'Sets the top and bottom padding for the header.',
 				'option'      => $this->use_option,
 			),
+			'header_padding_left'            => array(
+				'css'         => array(
+					'.site-header .wrap',
+					'padding-left',
+					'',
+					'px',
+					true
+				),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => null,
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 5,
+				),
+				'description' => 'Sets the left padding for the header. Useful for full-width header.',
+				'option'      => $this->use_option,
+			),
+			'header_padding_right'            => array(
+				'css'         => array(
+					'.site-header .wrap',
+					'padding-left',
+					'',
+					'px',
+					true
+				),
+				'priority'    => 10,
+				'type'        => 'range',
+				'default'     => null,
+				'input_attrs' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 5,
+				),
+				'description' => 'Sets the right padding for the header. Useful for full-width header.',
+				'option'      => $this->use_option,
+			),
 			'fullwidth_header'          => array(
 				'css'      => array(
 					'.site-header .wrap',
@@ -97,7 +137,7 @@ class GSC_Header_Old extends GSC_Base {
 					array(
 						'checkbox' => true,
 						'value'    => 100,
-						'uses'     => array( 'padding-left' => '40px', 'padding-right' => '40px' )
+						'uses'     => array( 'padding-left' => $header_padding_right . 'px', 'padding-right' => $header_padding_right . 'px' )
 					)
 				),
 				'priority' => 10,
@@ -126,7 +166,7 @@ class GSC_Header_Old extends GSC_Base {
 				'type'        => 'checkbox',
 				'default'     => 0,
 				'label'       => 'Enable Fixed Header',
-				'description' => 'Header shrinks on scroll. Adjust the height below.',
+				'description' => 'Header shrinks on scroll. Adjust the height below. (Note, on newer Genesis child themes there may already be a fixed header built in).',
 				'option'      => $this->use_option,
 			),
 			'shrink_size'               => array( // use option to modify shrink css

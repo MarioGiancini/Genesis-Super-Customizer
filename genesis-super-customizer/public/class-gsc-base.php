@@ -194,7 +194,9 @@ abstract class GSC_Base {
 
 		$this->get_mods();
 
-		$gsc_use_options = $this->get_field_value( 'gsc_use_options' ) ? $this->get_field_value( 'gsc_use_options' ) : 0;
+		$gsc_options = get_option( self::$default_settings_field );
+
+		$gsc_use_options = !array_key_exists( 'gsc_use_options', $gsc_options ) ? true : $gsc_options['gsc_use_options'];
 
 		$this->use_option = $gsc_use_options ? true : false;
 
@@ -205,6 +207,7 @@ abstract class GSC_Base {
 				foreach ( $this->mod_settings as $mod => $settings ) {
 					self::$default_settings[ $mod ] = $settings['default'];
 
+					// Add each of the settings that have Live Preview to static array
 					if (array_key_exists('transport', $settings) && $settings['transport'] === 'postMessage') {
 						self::$preview_settings[$mod] = [
 							'selector' => $settings['css'][0],
@@ -275,8 +278,8 @@ abstract class GSC_Base {
 
 		if ( $this->new_panel ) {
 			$wp_customize->add_panel( $this->mod_panel, array(
-					'title'           => __( $this->panel_title, 'genesis' ),
-					'description'     => __( $this->panel_desc, 'genesis' ),
+					'title'           => __( $this->panel_title, 'genesis-super-customizer' ),
+					'description'     => __( $this->panel_desc, 'genesis-super-customizer' ),
 					'priority'        => $this->panel_priority,
 					'active_callback' => $this->active_callback
 				)
@@ -287,8 +290,8 @@ abstract class GSC_Base {
 			$wp_customize->add_section(
 				$this->mod_section,
 				array(
-					'title'           => __( $this->section_title, 'genesis' ),
-					'description'     => __( $this->section_desc, 'genesis' ),
+					'title'           => __( $this->section_title, 'genesis-super-customizer' ),
+					'description'     => __( $this->section_desc, 'genesis-super-customizer' ),
 					'priority'        => $this->section_priority,
 					'panel'           => $this->mod_panel,
 					'active_callback' => $this->active_callback
@@ -328,8 +331,8 @@ abstract class GSC_Base {
 					$wp_customize->add_control(
 						$mod,
 						array(
-							'label'           => __( $label, 'genesis' ),
-							'description'     => __( $desc, 'genesis' ),
+							'label'           => __( $label, 'genesis-super-customizer' ),
+							'description'     => __( $desc, 'genesis-super-customizer' ),
 							'section'         => $this->mod_section,
 							'settings'        => $setting,
 							'type'            => $type,
@@ -347,8 +350,8 @@ abstract class GSC_Base {
 							$mod,
 							array(
 								'section'         => $this->mod_section,
-								'label'           => __( ucwords( str_replace( '_', ' ', $label ) ), 'genesis' ),
-								'description'     => __( $desc, 'genesis' ),
+								'label'           => __( ucwords( str_replace( '_', ' ', $label ) ), 'genesis-super-customizer' ),
+								'description'     => __( $desc, 'genesis-super-customizer' ),
 								'settings'        => $setting,
 								'priority'        => $priority,
 								'active_callback' => $active_callback
@@ -364,8 +367,8 @@ abstract class GSC_Base {
 							$mod,
 							array(
 								'section'         => $this->mod_section,
-								'label'           => __( $label, 'genesis' ),
-								'description'     => __( $desc, 'genesis' ),
+								'label'           => __( $label, 'genesis-super-customizer' ),
+								'description'     => __( $desc, 'genesis-super-customizer' ),
 								'settings'        => $setting,
 								'priority'        => $priority,
 								'active_callback' => $active_callback
@@ -380,8 +383,8 @@ abstract class GSC_Base {
 							$wp_customize,
 							$mod,
 							array(
-								'label'           => __( $label, 'genesis' ),
-								'description'     => __( $desc, 'genesis' ),
+								'label'           => __( $label, 'genesis-super-customizer' ),
+								'description'     => __( $desc, 'genesis-super-customizer' ),
 								'section'         => $this->mod_section,
 								'settings'        => $setting,
 								'priority'        => $priority,
@@ -397,8 +400,8 @@ abstract class GSC_Base {
 					$wp_customize->add_control(
 						$mod,
 						array(
-							'label'           => __( $label, 'genesis' ),
-							'description'     => __( $desc, 'genesis' ),
+							'label'           => __( $label, 'genesis-super-customizer' ),
+							'description'     => __( $desc, 'genesis-super-customizer' ),
 							'section'         => $this->mod_section,
 							'settings'        => $setting,
 							'type'            => $type,

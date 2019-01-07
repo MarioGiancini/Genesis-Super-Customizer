@@ -93,6 +93,13 @@ jQuery(function ($) {
             $(this).parent().find('.slider').slider('value', resetValue);
         });
 
+        // Reset slider and remove input field value
+        $('.slider-remove').on('click', function () {
+            var removeValue = $(this).attr('slider-remove-value');
+            $(this).parent().find('.customize-control-slider-value').val(removeValue);
+            $(this).parent().find('.slider').slider('value', removeValue);
+        });
+
         // Update slider if the input field loses focus as it's most likely changed
         $('.customize-control-slider-value').blur(function () {
             var resetValue = $(this).val();
